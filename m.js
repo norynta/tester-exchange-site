@@ -19,7 +19,29 @@
       var r = e && e.reason; if (scanner || !SCAN.test(String((r && r.message) || r))) return;
       scanner = true; try { e.preventDefault(); window.posthog && window.posthog.opt_out_capturing(); } catch (x) {}
     });
-    if (!(window.posthog && window.posthog.__loaded) && !(window.posthog && window.posthog._i)) {
+    // Errors that aren't ours: browser extensions and in-app browsers inject scripts that throw on every page
+    // ("Cannot read properties of undefined (reading 'M_ID')": 230 a week on testerexchange.com, all from 3 desktop
+    // sessions with an extension, 15 Nov; that name is in none of our code). Also "Script error." with no source.
+    // Ours always have a stack frame or filename on an http(s) page script; these have none, or only extension frames.
+    var INJECTED = /reading 'M_ID'|Java object is gone|__gCrWeb|webkit\.messageHandlers|instantSearchSDKJSBridge|ucbrowser|zaloJSV2|vivoNewsDetailPage|ResizeObserver loop/i;
+    var foreign = function (msg, src, stack) {
+      msg = String(msg || ''); src = String(src || ''); stack = String(stack || '');
+      if (INJECTED.test(msg)) return true;
+      if (/^Script error\.?$/.test(msg) && !src) return true;
+      if (/^(chrome|moz|safari(-web)?|ms-browser)-extension:|^about:|^blob:|^webkit-masked-url:/.test(src)) return true;
+      if (/(chrome|moz|safari(-web)?)-extension:\/\//.test(stack)) return true;
+      return false;
+    };
+    // Only real production hosts go to PostHog: local dev, *.pages.dev previews and odd ports (port scanners)
+    // were mixed into the numbers (localhost:4177, sajuwise.pages.dev, salarynet.app:2087 ..., 15 Nov).
+    var REAL = !location.port && !/^(localhost|127\.|\d+\.\d+\.\d+\.\d+$)|\.pages\.dev$|\.workers\.dev$|\.vercel\.app$/.test(location.hostname);
+    // "Script error." = a cross-origin script failed and the browser hides every detail; nothing to act on.
+    var opaque = function (ev) {
+      try { var l = ev.properties && ev.properties.$exception_list; if (ev.event !== '$exception' || !l || !l.length) return false;
+        if (INJECTED.test(l[0].value || '')) return true;
+        return /^Script error\.?$/.test(l[0].value || '') && !(l[0].stacktrace && l[0].stacktrace.frames && l[0].stacktrace.frames.length); } catch (x) { return false; }
+    };
+    if (REAL && !(window.posthog && window.posthog.__loaded) && !(window.posthog && window.posthog._i)) {
       !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once unregister identify reset get_distinct_id get_session_id get_session_replay_url set_config startSessionRecording stopSessionRecording captureException opt_out_capturing".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
       window.posthog.init('phc_wEUxRVQa93MbnxvrA78bd2KpZ9RGVqESJ8Xeete9NPTE', {
         api_host: 'https://us.i.posthog.com',
@@ -31,7 +53,7 @@
         enable_heatmaps: true,
         capture_exceptions: true,
         session_recording: { maskAllInputs: true },
-        before_send: function (ev) { return scanner ? null : ev; }
+        before_send: function (ev) { return scanner || opaque(ev) ? null : ev; }
       });
       window.posthog.register({ site: site, business: BIZ });
     }
@@ -90,11 +112,11 @@
     }, true);
 
     addEventListener('error', function (e) {
-      if (e && e.message) add('error', e.message, null, { src: String(e.filename || '').slice(0, 150), line: e.lineno || 0 });
+      if (e && e.message) { if (!foreign(e.message, e.filename, e.error && e.error.stack)) add('error', e.message, null, { src: String(e.filename || '').slice(0, 150), line: e.lineno || 0 }); }
       // Skip analytics scripts that ad blockers stop (Cloudflare beacon, PostHog): not a user-facing failure, only noise.
       else if (e && e.target && (e.target.src || e.target.href) && !/cloudflareinsights\.com|posthog\.com/.test(e.target.src || e.target.href)) add('error', 'failed to load ' + e.target.tagName.toLowerCase(), null, { src: String(e.target.src || e.target.href).slice(0, 150) });
     }, true);
-    addEventListener('unhandledrejection', function (e) { var r = e && e.reason; if (SCAN.test(String((r && r.message) || r))) return; add('error', 'promise: ' + String((r && r.message) || r).slice(0, 180)); });
+    addEventListener('unhandledrejection', function (e) { var r = e && e.reason; if (SCAN.test(String((r && r.message) || r)) || foreign((r && r.message) || r, '', r && r.stack)) return; add('error', 'promise: ' + String((r && r.message) || r).slice(0, 180)); });
 
     // LCP only counts while the tab was visible (as in Google's web-vitals): pages opened in a background tab reported hours.
     var firstHidden = document.visibilityState === 'hidden' ? 0 : Infinity;

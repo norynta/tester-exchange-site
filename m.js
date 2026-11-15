@@ -79,7 +79,11 @@
       if (left) return; left = true;
       add('leave', '', Math.round((Date.now() - t0) / 1000), { scroll: maxScroll });
     }
-    function pageview() { add('pageview', (document.title || '').slice(0, 120)); }
+    function pageview() {
+      // utm_source / ref tags on posted links, so each community's visits can be counted (Post Everywhere Playbook)
+      var u = null; try { var sp = new URLSearchParams(location.search), us = sp.get('utm_source'); if (us) u = { utm: us.slice(0, 60), camp: (sp.get('utm_campaign') || '').slice(0, 60) }; } catch (e) {}
+      add('pageview', (document.title || '').slice(0, 120), null, u);
+    }
     function route() {
       if (location.pathname === path) return;
       leave(); send();

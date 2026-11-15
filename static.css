@@ -63,7 +63,7 @@ pre{background:var(--surface);border:1px solid var(--line);border-radius:10px;pa
 .offer{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:24px 0}
 .offer h2{margin:0 0 6px}.offer .packs{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:14px 0}
 .offer .packs a{display:flex;flex-direction:column;gap:2px;border:1px solid var(--line);border-radius:12px;padding:10px 14px;text-decoration:none;color:var(--ink)}
-.offer .packs .best a{border-color:var(--accent);background:var(--accent-soft)}.offer .price{font-size:22px;font-weight:650}.offer small{color:var(--muted)}
+.offer .packs .best a{border-color:var(--accent);background:var(--accent-soft)}.offer .price{font-size:22px;font-weight:650}.offer .local{display:block;font-size:14px;font-weight:400;color:var(--muted)}.offer small{color:var(--muted)}
 .offer .how{margin:8px 0 14px}.offer .row{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
 .ans .hint{color:var(--muted);font-size:14px;margin:0 0 8px;white-space:normal}.ans .draft{color:var(--ink)}.ans .draft:empty{display:none}
 #out>p>button{font:inherit;font-size:14px;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:4px 12px;color:var(--ink);cursor:pointer}

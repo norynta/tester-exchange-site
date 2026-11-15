@@ -150,7 +150,8 @@
 
 /* Feedback / report-a-problem button (every site that loads /m.js). Small tab on the left edge; opens a form that
    posts to the comms hub inbox (comms.norynta.com/feedback), which the daily brief reads. Recent JS errors and the
-   page URL are attached so bugs can be reproduced. Turn off with data-feedback="off" on the script tag.
+   page URL are attached so bugs can be reproduced. Turn off with data-feedback="off" on the script tag (do this on sites
+   that have their own feedback form, e.g. 64 Types). Class names use the nfb- prefix so they never clash with a site's CSS.
    Any element with a data-feedback attribute (e.g. a footer link) or window.feedback() also opens it. */
 (function () {
   try {
@@ -180,13 +181,13 @@
     var L = String(document.documentElement.lang || navigator.language || 'en').toLowerCase();
     var key = /^zh-(hant|tw|hk|mo)/.test(L) ? 'zh-hant' : L.split('-')[0];
     var t = T[key] || T.en, rtl = key === 'ar';
-    var css = '.fb-tab{position:fixed;left:0;top:50%;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;z-index:2147483000;background:#222;color:#fff;border:0;border-radius:0 6px 6px 0;padding:10px 5px;font:600 12px/1 system-ui,sans-serif;letter-spacing:.3px;opacity:.72;cursor:pointer}'
-      + '.fb-tab:hover{opacity:1}.fb-bg{position:fixed;inset:0;z-index:2147483001;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;padding:16px}'
-      + '.fb-box{background:#fff;color:#111;width:100%;max-width:420px;border-radius:14px;padding:20px;font:15px/1.4 system-ui,sans-serif;box-shadow:0 10px 40px rgba(0,0,0,.3)}'
-      + '.fb-box h2{font-size:17px;margin:0 0 12px}.fb-k{display:flex;gap:8px;margin-bottom:10px}.fb-k button{flex:1;border:1px solid #ccc;background:#fff;color:#111;border-radius:8px;padding:8px;font:inherit;cursor:pointer}'
-      + '.fb-k button[aria-pressed=true]{background:#111;color:#fff;border-color:#111}.fb-box textarea,.fb-box input{width:100%;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;padding:10px;font:inherit;margin-bottom:10px;background:#fff;color:#111}'
-      + '.fb-box textarea{min-height:110px;resize:vertical}.fb-row{display:flex;gap:8px;justify-content:flex-end}.fb-row button{border:0;border-radius:8px;padding:10px 18px;font:600 15px system-ui,sans-serif;cursor:pointer}'
-      + '.fb-send{background:#111;color:#fff}.fb-x{background:#eee;color:#111}.fb-msg{margin:8px 0 0;font-size:14px}.fb-hp{position:absolute;left:-9999px}';
+    var css = '.nfb-tab{position:fixed;left:0;top:50%;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;z-index:2147483000;background:#222;color:#fff;border:0;border-radius:0 6px 6px 0;padding:10px 5px;font:600 12px/1 system-ui,sans-serif;letter-spacing:.3px;opacity:.72;cursor:pointer}'
+      + '.nfb-tab:hover{opacity:1}.nfb-bg{position:fixed;inset:0;z-index:2147483001;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;padding:16px}'
+      + '.nfb-box{background:#fff;color:#111;width:100%;max-width:420px;border-radius:14px;padding:20px;font:15px/1.4 system-ui,sans-serif;box-shadow:0 10px 40px rgba(0,0,0,.3)}'
+      + '.nfb-box h2{font-size:17px;margin:0 0 12px}.nfb-k{display:flex;gap:8px;margin-bottom:10px}.nfb-k button{flex:1;border:1px solid #ccc;background:#fff;color:#111;border-radius:8px;padding:8px;font:inherit;cursor:pointer}'
+      + '.nfb-k button[aria-pressed=true]{background:#111;color:#fff;border-color:#111}.nfb-box textarea,.nfb-box input{width:100%;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;padding:10px;font:inherit;margin-bottom:10px;background:#fff;color:#111}'
+      + '.nfb-box textarea{min-height:110px;resize:vertical}.nfb-row{display:flex;gap:8px;justify-content:flex-end}.nfb-row button{border:0;border-radius:8px;padding:10px 18px;font:600 15px system-ui,sans-serif;cursor:pointer}'
+      + '.nfb-send{background:#111;color:#fff}.nfb-x{background:#eee;color:#111}.nfb-msg{margin:8px 0 0;font-size:14px}.nfb-hp{position:absolute;left:-9999px}';
     function el(tag, attrs, kids) {
       var n = document.createElement(tag); for (var a in attrs || {}) { if (a === 'text') n.textContent = attrs[a]; else n.setAttribute(a, attrs[a]); }
       (kids || []).forEach(function (k) { n.appendChild(k); }); return n;
@@ -198,13 +199,13 @@
       var kb = kinds.map(function (k, i) { return el('button', { type: 'button', 'aria-pressed': String(k === kind), text: t[2][i], 'data-k': k }); });
       var ta = el('textarea', { placeholder: t[3], maxlength: '4000', 'aria-label': t[3] });
       var em = el('input', { type: 'email', placeholder: t[4], 'aria-label': t[4], autocomplete: 'email' });
-      var hp = el('input', { 'class': 'fb-hp', tabindex: '-1', autocomplete: 'off', 'aria-hidden': 'true' });
-      var send = el('button', { type: 'submit', 'class': 'fb-send', text: t[5] });
-      var x = el('button', { type: 'button', 'class': 'fb-x', text: '×', 'aria-label': 'Close' });
-      var msg = el('p', { 'class': 'fb-msg', role: 'status' });
-      var form = el('form', { 'class': 'fb-box', role: 'dialog', 'aria-modal': 'true', 'aria-label': t[1], dir: rtl ? 'rtl' : 'ltr' },
-        [el('h2', { text: t[1] }), el('div', { 'class': 'fb-k' }, kb), ta, em, hp, el('div', { 'class': 'fb-row' }, [x, send]), msg]);
-      var bg = el('div', { 'class': 'fb-bg' }, [form]);
+      var hp = el('input', { 'class': 'nfb-hp', tabindex: '-1', autocomplete: 'off', 'aria-hidden': 'true' });
+      var send = el('button', { type: 'submit', 'class': 'nfb-send', text: t[5] });
+      var x = el('button', { type: 'button', 'class': 'nfb-x', text: '×', 'aria-label': 'Close' });
+      var msg = el('p', { 'class': 'nfb-msg', role: 'status' });
+      var form = el('form', { 'class': 'nfb-box', role: 'dialog', 'aria-modal': 'true', 'aria-label': t[1], dir: rtl ? 'rtl' : 'ltr' },
+        [el('h2', { text: t[1] }), el('div', { 'class': 'nfb-k' }, kb), ta, em, hp, el('div', { 'class': 'nfb-row' }, [x, send]), msg]);
+      var bg = el('div', { 'class': 'nfb-bg' }, [form]);
       function close() { open = false; bg.remove(); removeEventListener('keydown', esc); }
       function esc(e) { if (e.key === 'Escape') close(); }
       addEventListener('keydown', esc);
@@ -225,7 +226,7 @@
     window.feedback = show;
     function init() {
       document.head.appendChild(el('style', { text: css }));
-      document.body.appendChild(el('button', { type: 'button', 'class': 'fb-tab', text: t[0], 'aria-label': t[1], 'data-feedback': '' }));
+      document.body.appendChild(el('button', { type: 'button', 'class': 'nfb-tab', text: t[0], 'aria-label': t[1], 'data-feedback': '' }));
       document.addEventListener('click', function (e) { var a = e.target && e.target.closest && e.target.closest('[data-feedback]'); if (a) { e.preventDefault(); show(); } });
     }
     if (document.body) init(); else addEventListener('DOMContentLoaded', init);

@@ -10,7 +10,7 @@
     // PostHog (Norynta account, admin@norynta.com, free tier): product analytics, funnels, heatmaps,
     // session replay (inputs masked) and error tracking for every business, tagged by site/business.
     var BIZ = { '64types.app': '64 Types', 'testerexchange.com': 'Tester Exchange', 'norynta.com': 'Norynta',
-      'collect.norynta.com': 'Norynta', 'sourcing.norynta.com': 'Norynta Sourcing', 'comms.norynta.com': 'Norynta', 'getrankroot.com': 'RankRoot' }[site] || site;
+      'collect.norynta.com': 'Norynta', 'sourcing.norynta.com': 'Norynta Sourcing', 'comms.norynta.com': 'Norynta', 'getrankroot.com': 'RankRoot', 'agentatlas.dev': 'AgentAtlas' }[site] || site;
     // Email link scanners (e.g. Microsoft Safe Links) open links from our emails and throw this rejection.
     // They are not people: stop recording that visit so visitor counts and error reports stay real.
     var SCAN = /Object Not Found Matching Id/;

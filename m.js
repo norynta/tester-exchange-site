@@ -125,3 +125,87 @@
     };
   } catch (e) {}
 })();
+
+/* Feedback / report-a-problem button (every site that loads /m.js). Small tab on the left edge; opens a form that
+   posts to the comms hub inbox (comms.norynta.com/feedback), which the daily brief reads. Recent JS errors and the
+   page URL are attached so bugs can be reproduced. Turn off with data-feedback="off" on the script tag.
+   Any element with a data-feedback attribute (e.g. a footer link) or window.feedback() also opens it. */
+(function () {
+  try {
+    var S = document.currentScript;
+    if ((S && S.getAttribute('data-feedback') === 'off') || window.__fb || navigator.webdriver || /bot|crawl|spider|headless|lighthouse/i.test(navigator.userAgent)) return;
+    window.__fb = 1;
+    var errs = [];
+    addEventListener('error', function (e) { if (e && e.message && errs.length < 5) errs.push(e.message + ' @' + (e.filename || '').split('/').pop() + ':' + (e.lineno || 0)); }, true);
+    addEventListener('unhandledrejection', function (e) { var r = e && e.reason; if (errs.length < 5) errs.push('promise: ' + String((r && r.message) || r).slice(0, 150)); });
+    var T = {
+      en: ['Feedback', 'Report a problem or share an idea', ['Problem', 'Idea', 'Other'], 'What happened? What did you expect?', 'Your email (optional, for a reply)', 'Send', 'Thanks! We read every message.', "Couldn't send. Please try again."],
+      'zh-hant': ['意見回饋', '回報問題或提供建議', ['問題', '建議', '其他'], '發生了什麼事？你原本預期什麼？', '你的 Email（選填，方便回覆）', '送出', '謝謝！每則訊息我們都會看。', '送出失敗，請再試一次。'],
+      zh: ['意见反馈', '报告问题或提出建议', ['问题', '建议', '其他'], '发生了什么？你原本期望什么？', '你的邮箱（选填，方便回复）', '提交', '谢谢！每条消息我们都会看。', '提交失败，请重试。'],
+      es: ['Comentarios', 'Informa un problema o comparte una idea', ['Problema', 'Idea', 'Otro'], '¿Qué pasó? ¿Qué esperabas?', 'Tu email (opcional, para responderte)', 'Enviar', '¡Gracias! Leemos todos los mensajes.', 'No se pudo enviar. Inténtalo de nuevo.'],
+      pt: ['Feedback', 'Relate um problema ou compartilhe uma ideia', ['Problema', 'Ideia', 'Outro'], 'O que aconteceu? O que você esperava?', 'Seu e-mail (opcional, para resposta)', 'Enviar', 'Obrigado! Lemos todas as mensagens.', 'Não foi possível enviar. Tente novamente.'],
+      fr: ['Avis', 'Signaler un problème ou proposer une idée', ['Problème', 'Idée', 'Autre'], "Que s'est-il passé ? Qu'attendiez-vous ?", 'Votre e-mail (facultatif, pour une réponse)', 'Envoyer', 'Merci ! Nous lisons chaque message.', "Échec de l'envoi. Réessayez."],
+      de: ['Feedback', 'Problem melden oder Idee teilen', ['Problem', 'Idee', 'Sonstiges'], 'Was ist passiert? Was hast du erwartet?', 'Deine E-Mail (optional, für eine Antwort)', 'Senden', 'Danke! Wir lesen jede Nachricht.', 'Senden fehlgeschlagen. Bitte erneut versuchen.'],
+      id: ['Masukan', 'Laporkan masalah atau bagikan ide', ['Masalah', 'Ide', 'Lainnya'], 'Apa yang terjadi? Apa yang kamu harapkan?', 'Email kamu (opsional, untuk balasan)', 'Kirim', 'Terima kasih! Kami membaca setiap pesan.', 'Gagal mengirim. Coba lagi.'],
+      vi: ['Góp ý', 'Báo lỗi hoặc chia sẻ ý tưởng', ['Lỗi', 'Ý tưởng', 'Khác'], 'Đã xảy ra chuyện gì? Bạn mong đợi điều gì?', 'Email của bạn (tùy chọn, để phản hồi)', 'Gửi', 'Cảm ơn! Chúng tôi đọc mọi tin nhắn.', 'Không gửi được. Vui lòng thử lại.'],
+      ja: ['フィードバック', '問題の報告・ご意見', ['問題', 'アイデア', 'その他'], '何が起きましたか？本来どうなるはずでしたか？', 'メールアドレス（任意・返信用）', '送信', 'ありがとうございます！すべて読んでいます。', '送信できませんでした。もう一度お試しください。'],
+      ko: ['피드백', '문제 신고 또는 아이디어 공유', ['문제', '아이디어', '기타'], '무슨 일이 있었나요? 무엇을 기대했나요?', '이메일 (선택, 답장용)', '보내기', '감사합니다! 모든 메시지를 읽습니다.', '보내지 못했습니다. 다시 시도해 주세요.'],
+      ru: ['Отзыв', 'Сообщить о проблеме или предложить идею', ['Проблема', 'Идея', 'Другое'], 'Что произошло? Чего вы ожидали?', 'Ваш email (необязательно, для ответа)', 'Отправить', 'Спасибо! Мы читаем каждое сообщение.', 'Не удалось отправить. Попробуйте ещё раз.'],
+      tr: ['Geri bildirim', 'Sorun bildir veya fikir paylaş', ['Sorun', 'Fikir', 'Diğer'], 'Ne oldu? Ne bekliyordun?', 'E-postan (isteğe bağlı, yanıt için)', 'Gönder', 'Teşekkürler! Her mesajı okuyoruz.', 'Gönderilemedi. Tekrar dene.'],
+      hi: ['फ़ीडबैक', 'समस्या बताएं या सुझाव दें', ['समस्या', 'सुझाव', 'अन्य'], 'क्या हुआ? आप क्या उम्मीद कर रहे थे?', 'आपका ईमेल (वैकल्पिक, जवाब के लिए)', 'भेजें', 'धन्यवाद! हम हर संदेश पढ़ते हैं।', 'भेजा नहीं जा सका। फिर कोशिश करें।'],
+      ar: ['ملاحظات', 'أبلغ عن مشكلة أو شارك فكرة', ['مشكلة', 'فكرة', 'أخرى'], 'ماذا حدث؟ وماذا كنت تتوقع؟', 'بريدك الإلكتروني (اختياري، للرد)', 'إرسال', 'شكرًا! نقرأ كل رسالة.', 'تعذّر الإرسال. حاول مرة أخرى.']
+    };
+    var L = String(document.documentElement.lang || navigator.language || 'en').toLowerCase();
+    var key = /^zh-(hant|tw|hk|mo)/.test(L) ? 'zh-hant' : L.split('-')[0];
+    var t = T[key] || T.en, rtl = key === 'ar';
+    var css = '.fb-tab{position:fixed;left:0;top:50%;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;z-index:2147483000;background:#222;color:#fff;border:0;border-radius:0 6px 6px 0;padding:10px 5px;font:600 12px/1 system-ui,sans-serif;letter-spacing:.3px;opacity:.72;cursor:pointer}'
+      + '.fb-tab:hover{opacity:1}.fb-bg{position:fixed;inset:0;z-index:2147483001;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;padding:16px}'
+      + '.fb-box{background:#fff;color:#111;width:100%;max-width:420px;border-radius:14px;padding:20px;font:15px/1.4 system-ui,sans-serif;box-shadow:0 10px 40px rgba(0,0,0,.3)}'
+      + '.fb-box h2{font-size:17px;margin:0 0 12px}.fb-k{display:flex;gap:8px;margin-bottom:10px}.fb-k button{flex:1;border:1px solid #ccc;background:#fff;color:#111;border-radius:8px;padding:8px;font:inherit;cursor:pointer}'
+      + '.fb-k button[aria-pressed=true]{background:#111;color:#fff;border-color:#111}.fb-box textarea,.fb-box input{width:100%;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;padding:10px;font:inherit;margin-bottom:10px;background:#fff;color:#111}'
+      + '.fb-box textarea{min-height:110px;resize:vertical}.fb-row{display:flex;gap:8px;justify-content:flex-end}.fb-row button{border:0;border-radius:8px;padding:10px 18px;font:600 15px system-ui,sans-serif;cursor:pointer}'
+      + '.fb-send{background:#111;color:#fff}.fb-x{background:#eee;color:#111}.fb-msg{margin:8px 0 0;font-size:14px}.fb-hp{position:absolute;left:-9999px}';
+    function el(tag, attrs, kids) {
+      var n = document.createElement(tag); for (var a in attrs || {}) { if (a === 'text') n.textContent = attrs[a]; else n.setAttribute(a, attrs[a]); }
+      (kids || []).forEach(function (k) { n.appendChild(k); }); return n;
+    }
+    var open = false;
+    function show() {
+      if (open) return; open = true;
+      var kind = 'problem', kinds = ['problem', 'idea', 'other'];
+      var kb = kinds.map(function (k, i) { return el('button', { type: 'button', 'aria-pressed': String(k === kind), text: t[2][i], 'data-k': k }); });
+      var ta = el('textarea', { placeholder: t[3], maxlength: '4000', 'aria-label': t[3] });
+      var em = el('input', { type: 'email', placeholder: t[4], 'aria-label': t[4], autocomplete: 'email' });
+      var hp = el('input', { 'class': 'fb-hp', tabindex: '-1', autocomplete: 'off', 'aria-hidden': 'true' });
+      var send = el('button', { type: 'submit', 'class': 'fb-send', text: t[5] });
+      var x = el('button', { type: 'button', 'class': 'fb-x', text: '×', 'aria-label': 'Close' });
+      var msg = el('p', { 'class': 'fb-msg', role: 'status' });
+      var form = el('form', { 'class': 'fb-box', role: 'dialog', 'aria-modal': 'true', 'aria-label': t[1], dir: rtl ? 'rtl' : 'ltr' },
+        [el('h2', { text: t[1] }), el('div', { 'class': 'fb-k' }, kb), ta, em, hp, el('div', { 'class': 'fb-row' }, [x, send]), msg]);
+      var bg = el('div', { 'class': 'fb-bg' }, [form]);
+      function close() { open = false; bg.remove(); removeEventListener('keydown', esc); }
+      function esc(e) { if (e.key === 'Escape') close(); }
+      addEventListener('keydown', esc);
+      bg.addEventListener('click', function (e) { if (e.target === bg) close(); });
+      x.onclick = close;
+      kb.forEach(function (b) { b.onclick = function () { kind = b.getAttribute('data-k'); kb.forEach(function (o) { o.setAttribute('aria-pressed', String(o === b)); }); }; });
+      form.onsubmit = function (e) {
+        e.preventDefault(); if (ta.value.trim().length < 3) { ta.focus(); return; }
+        send.disabled = true; msg.textContent = '';
+        fetch('https://comms.norynta.com/feedback', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ kind: kind, text: ta.value, email: em.value, website: hp.value, url: location.href, lang: L, screen: innerWidth + 'x' + innerHeight, errors: errs }) })
+          .then(function (r) { if (!r.ok) throw 0; form.replaceChildren(el('h2', { text: t[6] })); setTimeout(close, 2200);
+            try { window.mon && window.mon('feedback_sent', { kind: kind }); } catch (z) {} })
+          .catch(function () { send.disabled = false; msg.textContent = t[7]; });
+      };
+      document.body.appendChild(bg); ta.focus();
+    }
+    window.feedback = show;
+    function init() {
+      document.head.appendChild(el('style', { text: css }));
+      document.body.appendChild(el('button', { type: 'button', 'class': 'fb-tab', text: t[0], 'aria-label': t[1], 'data-feedback': '' }));
+      document.addEventListener('click', function (e) { var a = e.target && e.target.closest && e.target.closest('[data-feedback]'); if (a) { e.preventDefault(); show(); } });
+    }
+    if (document.body) init(); else addEventListener('DOMContentLoaded', init);
+  } catch (e) {}
+})();

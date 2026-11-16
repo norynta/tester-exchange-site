@@ -20,7 +20,7 @@
   installing each app once (one button walks through the list); keeping it 14 days earns 10 credits and each day you
   open it adds a bonus credit. Each app you keep installed brings a tester to yours. Developers can also join free swap circles where members test each other's apps. Paid: skip testing; paid apps get
   testers before anyone else. Google's 14 days apply to everyone.
-- Each tester stays opted in to your closed test for the 14 days; their opens are recorded and paid as a bonus. Dropouts are
+- Each tester stays opted in to your closed test for the 14 days. Paid testers earn only for days they open every app they test, so your app gets daily opens, not just installs; every open is recorded. Dropouts are
   replaced automatically, and unused credits go back to your credit balance.
 - Purchases are final: credits don't convert back to money.
 - After 14 days: a test report with daily activity, tester feedback and draft answers for Google's

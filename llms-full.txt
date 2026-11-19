@@ -1,10 +1,10 @@
 # Tester Exchange: Google Play closed testing guides (full text)
 
-> Source: https://testerexchange.com/. Updated 2026-11-18. The short index is https://testerexchange.com/llms.txt.
+> Source: https://testerexchange.com/. Updated 2026-11-19. The short index is https://testerexchange.com/llms.txt.
 
 ---
 
-## How to get 12 testers for Google Play closed testing
+## 12 testers for Google Play closed testing: how to get them for the 14 days
 URL: https://testerexchange.com/guide/
 
 If you created a personal Google Play developer account after 13 November 2023, you can't publish to production right away. You first need a closed test with at least 12 testers who stay opted in for 14 days in a row. Google also reviews whether those testers actually used your app. This guide walks through the whole process and shows a free way to find real testers.

@@ -1,4 +1,4 @@
-// Local price next to the USD price on the static guide pages: "$12.99 · ≈ Rp 215.000".
+// Local price next to the USD price on the static guide pages: "$16.99 · ≈ Rp 215.000".
 // Same country guess (time zone first) and the same cached rates (localStorage tx_rates) as the app (src/currency.ts).
 // Checkout charges USD (cards convert), so this is only a guide; nothing shows for US visitors or on any failure.
 (function () {

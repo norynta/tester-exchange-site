@@ -2,8 +2,8 @@
 
 > Gets Android developers the 12 testers × 14 days that Google Play requires before a new personal developer
 > account can publish to production. Testers are real people on their own phones, and each day they open the app is
-> recorded, which is the engagement Google reviews. Pay once (US$12.99 for 12 testers,
-> $14.99 for 15, $22.99 for 25; card, PayPal, Apple Pay, Google Pay, local methods such as UPI and Pix, or USDT/USDC on BNB Chain, Polygon,
+> recorded, which is the engagement Google reviews. Pay once (US$16.99 for 12 testers,
+> $19.99 for 15, $29.99 for 25; card, PayPal, Apple Pay, Google Pay, local methods such as UPI and Pix, or USDT/USDC on BNB Chain, Polygon,
 > Arbitrum or Base sent straight to our wallet with no fee) or get testers free by testing other apps.
 > Prices are shown in the visitor's own currency. Site and every guide in 55 languages.
 

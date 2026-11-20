@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Unsubscribe · Tester Exchange</title>
+<style>body{font:17px system-ui,sans-serif;margin:40px auto;max-width:480px;padding:0 16px;color:#1c1d1a}button{font:17px system-ui;padding:10px 18px;border-radius:10px;border:0;background:#1f7a4d;color:#fff;cursor:pointer}button:disabled{opacity:.6}</style>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "b9db98dae8fd4c5ebe9bcc8ed928623c"}'></script>
+<script defer src="/m.js" data-site="testerexchange.com"></script>
+</head>
+<body>
+<p id="msg">Unsubscribe from Tester Exchange emails?</p>
+<p><button id="go">Unsubscribe</button></p>
+<script>
+(function () {
+  var q = new URLSearchParams(location.search), u = q.get('u') || '', s = q.get('s') || ''
+  var msg = document.getElementById('msg'), btn = document.getElementById('go')
+  if (!u || !s) { msg.textContent = 'This unsubscribe link is not valid. Reply to the email and we will remove you.'; btn.hidden = true; return }
+  btn.onclick = function () {
+    btn.disabled = true
+    fetch('https://vvrlxzbngxfxddywidoq.supabase.co/functions/v1/nudge?u=' + encodeURIComponent(u) + '&s=' + encodeURIComponent(s), { method: 'POST', body: 'unsubscribe=1' })
+      .then(function (r) {
+        if (r.ok) { msg.textContent = 'You are unsubscribed. Tester Exchange will not send you reminder emails.'; btn.hidden = true }
+        else { msg.textContent = 'This unsubscribe link is not valid. Reply to the email and we will remove you.'; btn.hidden = true }
+      })
+      .catch(function () { btn.disabled = false; msg.textContent = 'Something went wrong. Please try again, or reply to the email and we will remove you.' })
+  }
+})()
+</script>
+</body>
+</html>

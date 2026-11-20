@@ -149,6 +149,29 @@
       add('event', name, null, props && typeof props === 'object' ? props : null); send();
       try { window.posthog && window.posthog.capture(name, props && typeof props === 'object' ? props : {}); } catch (e) {}
     };
+
+    // Conversions on every site, with no per-site code: a form submitted, or a mail/phone link clicked.
+    // Records only which form (id/name/path) and which page. Never field values, emails or phone numbers.
+    var cvSeen = {};
+    function conv(name, props) {
+      var k = name + '|' + (props.form || props.kind) + '|' + location.pathname;
+      if (cvSeen[k] && Date.now() - cvSeen[k] < 3000) return; // double clicks / double submit
+      cvSeen[k] = Date.now();
+      window.mon(name, props);
+    }
+    addEventListener('submit', function (ev) {
+      try {
+        var f = ev.target; if (!f || f.tagName !== 'FORM' || (f.closest && f.closest('[class*="nfb-"]'))) return;
+        var act = (f.getAttribute('action') || '').split('?')[0].slice(0, 120);
+        conv('form_submit', { form: (f.id || f.getAttribute('name') || act || 'form').slice(0, 60), action: act, path: location.pathname });
+      } catch (x) {}
+    }, true);
+    addEventListener('click', function (ev) {
+      try {
+        var a = ev.target && ev.target.closest ? ev.target.closest('a[href^="mailto:"],a[href^="tel:"]') : null;
+        if (a) conv('contact_click', { kind: a.getAttribute('href').indexOf('tel:') === 0 ? 'tel' : 'mailto', path: location.pathname });
+      } catch (x) {}
+    }, true);
   } catch (e) {}
 })();
 

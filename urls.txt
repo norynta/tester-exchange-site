@@ -557,6 +557,7 @@ https://testerexchange.com/yo/earn-money-testing-android-apps/
 https://testerexchange.com/zh-cn/earn-money-testing-android-apps/
 https://testerexchange.com/zh-tw/earn-money-testing-android-apps/
 https://testerexchange.com/zu/earn-money-testing-android-apps/
+https://testerexchange.com/guide/fiverr-vs-tester-exchange/
 https://testerexchange.com/guide/free-closed-testing-testers/
 https://testerexchange.com/am/free-closed-testing-testers/
 https://testerexchange.com/ar/free-closed-testing-testers/
@@ -1552,7 +1553,9 @@ https://testerexchange.com/yo/production-access-rejected/
 https://testerexchange.com/zh-cn/production-access-rejected/
 https://testerexchange.com/zh-tw/production-access-rejected/
 https://testerexchange.com/zu/production-access-rejected/
+https://testerexchange.com/guide/reddit-vs-tester-exchange/
 https://testerexchange.com/guide/referral-program/
+https://testerexchange.com/guide/rejected-more-testing-required/
 https://testerexchange.com/guide/set-up-closed-testing-track/
 https://testerexchange.com/am/set-up-closed-testing-track/
 https://testerexchange.com/ar/set-up-closed-testing-track/
@@ -1620,6 +1623,7 @@ https://testerexchange.com/pl/test-for-test-closed-testing/
 https://testerexchange.com/pt/test-for-test-closed-testing/
 https://testerexchange.com/ru/test-for-test-closed-testing/
 https://testerexchange.com/tr/test-for-test-closed-testing/
+https://testerexchange.com/guide/testers-community-vs-tester-exchange/
 https://testerexchange.com/guide/twa-app-closed-testing-webview-fix/
 https://testerexchange.com/guide/website-to-android-app-12-testers/
 https://testerexchange.com/guide/when-can-i-apply-for-production-access/

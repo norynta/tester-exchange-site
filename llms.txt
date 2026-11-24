@@ -33,13 +33,15 @@
 - One call does the whole setup: `get_testers` (package_name, name?). It adds the app, opens its test, applies
   credits, and returns `human_steps` (add our Google Group in Play Console; pay with one of `buy_links`, or test other
   apps free at https://testerexchange.com/earn). Call it again any time to check progress.
-- MCP server (Streamable HTTP, no OAuth): https://vvrlxzbngxfxddywidoq.supabase.co/functions/v1/mcp
-  Auth: header `Authorization: Bearer tx_…` or `?token=tx_…`. Public tools (about, platform_stats, pricing) work
+- MCP server (Streamable HTTP): https://vvrlxzbngxfxddywidoq.supabase.co/functions/v1/mcp
+  Auth: OAuth 2.1 (PKCE, dynamic client registration; sign in with Google at testerexchange.com; use .../functions/v1/mcp/oauth
+  to be asked to sign in up front; discovery at .../mcp/.well-known/oauth-protected-resource), or header `Authorization: Bearer tx_…`,
+  or `?token=tx_…`. Public tools (about, platform_stats, pricing) work
   without a key. Server card: https://testerexchange.com/.well-known/mcp.json
   Claude Code: `claude mcp add --transport http tester-exchange https://vvrlxzbngxfxddywidoq.supabase.co/functions/v1/mcp --header "Authorization: Bearer tx_…"`
 - A2A (Agent2Agent 0.3, JSON-RPC): agent card https://testerexchange.com/.well-known/agent-card.json, endpoint
   https://vvrlxzbngxfxddywidoq.supabase.co/functions/v1/a2a. `message/send` with text ("get 12 testers for
-  com.example.app") or a data part {"skill": "get_testers", "package_name": "com.example.app"}; same Bearer key.
+  com.example.app") or a data part {"skill": "get_testers", "package_name": "com.example.app"}; same Bearer key or OAuth access token.
 - HTTP API (one endpoint): POST https://vvrlxzbngxfxddywidoq.supabase.co/rest/v1/rpc/agent_call
   headers: `apikey: sb_publishable_OwXT7OfwIGkuIn420mavVA_MsAkzZGf` (public key), `Content-Type: application/json`
   body: {"p_token": "tx_…" | null, "p_action": "get_testers", "p_args": {"package_name": "com.example.app"}}

@@ -18,7 +18,7 @@
     "required": false,
     "header": "Authorization",
     "format": "Bearer tx_...",
-    "description": "API key from https://testerexchange.com/api. Without it only about, platform_stats and pricing work; get_testers needs a key. No OAuth."
+    "description": "API key from https://testerexchange.com/api. Without it only about, platform_stats and pricing work; get_testers needs sign-in. OAuth 2.1 (PKCE, dynamic client registration) is also supported: protected-resource metadata at https://vvrlxzbngxfxddywidoq.supabase.co/functions/v1/mcp/.well-known/oauth-protected-resource."
   },
   "remotes": [
     {

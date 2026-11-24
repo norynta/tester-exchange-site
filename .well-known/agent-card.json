@@ -1,7 +1,7 @@
 {
     "protocolVersion": "0.3.0",
     "name": "Tester Exchange",
-    "description": "Gets Android developers the 12 testers \u00d7 14 days Google Play requires for closed testing. Real people test on their own phones; pay once or test other apps for free.",
+    "description": "Gets Android developers the 12 testers × 14 days Google Play requires for closed testing. Real people test on their own phones; pay once or test other apps for free.",
     "url": "https://vvrlxzbngxfxddywidoq.supabase.co/functions/v1/a2a",
     "preferredTransport": "JSONRPC",
     "additionalInterfaces": [
@@ -15,7 +15,7 @@
         "url": "https://testerexchange.com/"
     },
     "iconUrl": "https://testerexchange.com/favicon.svg",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "documentationUrl": "https://testerexchange.com/agents/",
     "capabilities": {
         "streaming": false,
@@ -23,6 +23,24 @@
         "stateTransitionHistory": false
     },
     "securitySchemes": {
+        "oauth2": {
+            "type": "oauth2",
+            "description": "OAuth 2.1 with PKCE (S256) and dynamic client registration; sign in at testerexchange.com.",
+            "flows": {
+                "authorizationCode": {
+                    "authorizationUrl": "https://vvrlxzbngxfxddywidoq.supabase.co/auth/v1/oauth/authorize",
+                    "tokenUrl": "https://vvrlxzbngxfxddywidoq.supabase.co/auth/v1/oauth/token",
+                    "refreshUrl": "https://vvrlxzbngxfxddywidoq.supabase.co/auth/v1/oauth/token",
+                    "scopes": {
+                        "openid": "Identify the user",
+                        "email": "Email address",
+                        "profile": "Profile",
+                        "offline_access": "Refresh tokens"
+                    }
+                }
+            },
+            "oauth2MetadataUrl": "https://vvrlxzbngxfxddywidoq.supabase.co/auth/v1/.well-known/oauth-authorization-server"
+        },
         "bearer": {
             "type": "http",
             "scheme": "bearer",
@@ -31,6 +49,11 @@
         }
     },
     "security": [
+        {
+            "oauth2": [
+                "openid"
+            ]
+        },
         {
             "bearer": []
         }
@@ -47,7 +70,7 @@
         {
             "id": "get_testers",
             "name": "Get 12 testers for an Android app",
-            "description": "Gets an Android app the 12 testers \u00d7 14 days Google Play requires for closed testing: adds the app, opens its test, applies credits, and returns progress plus the steps only a human can do (add our Google Group in Play Console; pay, or test other apps free). Send again to check progress. Needs a token.",
+            "description": "Gets an Android app the 12 testers × 14 days Google Play requires for closed testing: adds the app, opens its test, applies credits, and returns progress plus the steps only a human can do (add our Google Group in Play Console; pay, or test other apps free). Send again to check progress. Needs a token.",
             "examples": [
                 "Get 12 testers for com.example.app",
                 "{\"skill\":\"get_testers\",\"package_name\":\"com.example.app\",\"name\":\"My App\"}"

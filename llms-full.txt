@@ -128,6 +128,36 @@ After 14 days, apply for production access in the Play Console dashboard. Google
 
 ---
 
+## Adding new testers during a closed test
+URL: https://testerexchange.com/guide/add-new-testers-during-closed-test/
+
+Short answer: you can add testers at any time. Each person has their own 14-day clock that starts when they opt in, and adding people does not reset anyone else.
+
+### How it works
+
+- Adding emails to an email list or members to a Google Group does not need a new release; save the Testers tab changes.
+- A new tester's 14 days start when they opt in, not when you add them.
+- Existing testers keep their count when you upload new builds to the same track.
+
+### Steps
+
+1. Add the new emails or invite them to your Google Group.
+2. Send the opt-in link and ask them to accept and install.
+3. Track the new date in your notes. Your earliest apply date is when the 12th tester reaches day 14.
+
+### What to avoid
+
+- Do not delete the track or remove the list or group during the test.
+- Do not add testers you do not control; they may opt out and your count drops.
+
+### Frequently asked questions
+
+**Does adding testers delay my apply date?** Not if you already have 12 who will reach day 14. It only moves the date if you are replacing someone.
+
+**Do I need a new release for new testers?** No.
+
+---
+
 ## Get your 12 Google Play testers from your AI coding tool
 URL: https://testerexchange.com/guide/ai-builders/
 
@@ -237,6 +267,40 @@ The requirement counts 12 testers opted in continuously for 14 days, so testers 
 **Can testers find my app by searching Google Play?** No. Closed tests don't appear in search. Share the opt-in link or the Play Store link.
 
 **Do I need to republish after adding testers?** Adding emails to a list or members to a Google Group doesn't need a new release. Save the Testers tab changes and send them if Publishing overview asks.
+
+---
+
+## Where is the "Apply for production" button in Play Console?
+URL: https://testerexchange.com/guide/apply-for-production-button-missing/
+
+Short answer: Google shows Apply for production on the Dashboard once you meet the closed-test criteria: at least 12 testers opted in continuously for 14 days. If you do not see it, a tester count or date is usually the reason.
+
+### Where to look
+
+Open Play Console, pick the app and go to the Dashboard. Google says the Apply for production button appears there when you meet the criteria.
+
+### Why it may not show
+
+- Fewer than 12 testers are opted in right now.
+- Not every one of the 12 has 14 consecutive days yet. Your earliest date is when the 12th tester reaches day 14, not when you published.
+- A tester opted out and back in, which restarts their count.
+- Your account is not subject to the requirement (for example an organization account) so the flow differs.
+- The track or release is not in the state you think: check Publishing overview.
+
+### What to do next
+
+1. Check the opted-in count and each tester's opt-in date.
+2. Add testers if you are under 12 and replace dropouts at once.
+3. Wait until the 12th tester has 14 consecutive days.
+4. Open the Dashboard again, apply, and answer the three parts of the form with real numbers.
+
+Our free tool at https://testerexchange.com/tools/production-answers/ turns your numbers into draft answers.
+
+### Frequently asked questions
+
+**How long does review take after I apply?** Google says review usually takes seven days or less, but can occasionally take longer.
+
+**Can I apply on day 14 of the closed test?** Only if all 12 testers opted in on day 0.
 
 ---
 
@@ -446,6 +510,100 @@ Google's minimum is 12, and every tester must stay opted in for 14 days in a row
 
 ---
 
+## A tester uninstalled your app: what happens to the 14 days?
+URL: https://testerexchange.com/guide/closed-tester-uninstalled-the-app/
+
+Short answer: a tester who uninstalls but does not opt out is probably still opted in, so the opt-in count may not change. But they are not testing, which hurts engagement.
+
+### Opt-in versus use
+
+Google counts testers who are opted in. A tester who uninstalls without opting out is probably still opted in. A tester who opts out, and later opts in again, restarts their consecutive count.
+
+### Why you still care
+
+Google also looks at engagement and lists insufficient tester engagement as a reason you may need more testing. Quiet testers help the count and hurt the story you tell in the production form.
+
+### What to do
+
+1. Message the tester and ask them to reinstall from Google Play and stay opted in.
+2. If they will not, add a replacement; the replacement starts at day 1.
+3. Never remove the email list or the Google Group from the track during the test.
+
+### Frequently asked questions
+
+**Does an uninstall reset the 14 days?** Not by itself. Opting out and back in does.
+
+**How do I see who is still active?** Play Console shows opted-in testers. Services like Tester Exchange show daily use per tester.
+
+---
+
+## Closed testers in other countries: what has to be set
+URL: https://testerexchange.com/guide/closed-testers-in-other-countries/
+
+Short answer: your testers do not have to live where you live, but their country must be in your app's Countries / regions list, and their phone must meet your device requirements.
+
+### The rule
+
+If a tester's country is not in your Countries / regions list, the app is not available to them. Google says country changes apply across all tracks.
+
+### Check it
+
+1. Open Play Console and your app, then the Countries / regions settings for your testing track.
+2. Add the countries your testers live in.
+3. Ask the tester to retry the opt-in link after a few hours.
+4. If Play shows "your device isn't compatible", check minimum Android version, required features and device exclusions in the Device catalog.
+
+### Tips
+
+- Ask each tester to use the Google Account on your list and open the link in Chrome.
+- Pick testers on phones that fit your minimum Android version.
+- Keep a few spare testers in case one cannot install.
+
+### Frequently asked questions
+
+**Do testers need to be in my country?** No, but their country has to be selected for the app.
+
+**Does it matter which country my developer account is in?** The countries list for the app decides availability to testers; check it in Play Console.
+
+---
+
+## Play Console shows 0 testers opted in: causes and fixes
+URL: https://testerexchange.com/guide/closed-testing-0-testers-opted-in/
+
+Short answer: the count only includes people who opened the opt-in link and accepted while signed in with the Google Account on your list. Adding emails is not enough, and the app must be Published first.
+
+### Why the number stays at 0
+
+- The release on the closed track is not Published yet. Google says the opt-in link shows only when the app status is Published, and the first publish can take several hours to become available.
+- Nobody has opened the opt-in link. Each tester must open it and accept; sending the Play Store link is not enough.
+- The tester used a different Google Account than the one on your email list or in your Google Group.
+- The email list or group is not ticked or saved on this track, or the person is not yet a member of the Google Group.
+- The tester joined your internal test earlier. Google says internal testers cannot also join open or closed testing until they leave it.
+
+### Fix it in this order
+
+1. Open Publishing overview and send any waiting changes for review. Wait for Published.
+2. Open Test and release, Testing, Closed testing, Manage track, Testers. Confirm your list or group is selected and saved.
+3. Send each tester the opt-in link and one instruction: open it in Chrome on the phone with the right account, tap to become a tester, then install from Google Play.
+4. Give it a few hours before changing settings again; repeated changes can trigger new reviews.
+5. Check the count again in Play Console after a few hours.
+
+See the full list in our guide on closed testers seeing "app not available".
+
+### Why it matters for the 14 days
+
+Each tester's 14 days start when they opt in. A tester who never opted in has no clock running, so a 0 on day 3 is a delay you can still fix, but not one that fixes itself. Aim for 15 opted-in testers so a few late joiners do not move your apply date.
+
+### Frequently asked questions
+
+**Is 0 normal right after publishing?** Yes for a few hours. Google says the first test link can take several hours to become available.
+
+**Do testers who never opted in count toward 12?** No. Only opted-in testers count.
+
+**Can I add testers while the test runs?** Yes. Each new tester starts their own 14 days when they opt in; existing testers keep theirs.
+
+---
+
 ## Closed testing for games on Google Play: a guide for Unity, Unreal and Godot
 URL: https://testerexchange.com/guide/closed-testing-for-games/
 
@@ -520,6 +678,67 @@ Ask for 15 testers rather than 12, because some players drop out of games quickl
 **How long should testers play each day?** Google doesn't set a number. A short real session every day is better than one long session and then nothing.
 
 **Should I use Play Asset Delivery for the test?** If your game is large, yes. Smaller first downloads mean more testers actually install and start playing.
+
+---
+
+## Closed testing on your own phone: does it count?
+URL: https://testerexchange.com/guide/closed-testing-on-your-own-phone/
+
+Short answer: test on your own phone as much as you like, but do not expect it to cover the 12-tester requirement. Google wants 12 testers opted in, and it reviews how they actually used the app.
+
+### Your phone versus testers
+
+Google requires at least 12 testers opted in for 14 days. Check the opted-in count in Play Console to see exactly what counts for your account. Google also reviews engagement, so the testers should be real people using the app.
+
+### What to avoid
+
+- Do not fill seats with spare phones or throwaway accounts. They look like one person to any engagement review and put your account at risk.
+- Do not rely on friends who will never open the app. Engagement is part of the review.
+
+### What to do instead
+
+1. Use your own phone to test builds before you upload.
+2. Recruit real testers: friends and family, a free tester swap, or a service.
+3. Aim for 15 opted-in people and keep them using the app.
+
+You can test other developers' apps free at https://testerexchange.com/earn, and each app you test brings a tester to yours.
+
+### Frequently asked questions
+
+**Can I be one of the 12?** Check the opted-in count in Play Console to see how your account counts, and plan for 12 other real testers so you are safe.
+
+**Can one person use two phones?** It is not worth the risk; use different people.
+
+---
+
+## Exactly 12 testers opted in: is that enough?
+URL: https://testerexchange.com/guide/closed-testing-only-12-testers/
+
+Short answer: 12 is the minimum Google asks for, so it is enough only if all 12 stay opted in for 14 consecutive days. One dropout moves your date, which is why we suggest 15.
+
+### What Google counts
+
+Google Play Console Help says personal developer accounts created after 13 November 2023 need a closed test with at least 12 testers who have been opted in continuously for at least 14 days, and at least 12 must be opted in when you apply.
+
+### The risk of exactly 12
+
+Each tester has their own clock. If one of 12 leaves on day 8, only 11 can reach day 14 and the replacement starts at day 1. Testers who opt out and back in restart their count.
+
+- With 15 testers you can lose three and still apply on time.
+- Spare testers also smooth engagement: a few quiet people matter less when the rest use the app.
+
+### What to do
+
+1. Count the testers shown as opted in in Play Console.
+2. If you have 12 exactly, add three more now.
+3. Check the count every two or three days and replace anyone who leaves quickly.
+4. Apply only when at least 12 have each passed 14 consecutive days and are still opted in.
+
+### Frequently asked questions
+
+**Do I need more than 12?** Google asks for at least 12. We suggest 15 so dropouts do not delay you.
+
+**Does opting out and back in reset the count?** Yes. Google says the 14 days must be consecutive, so rejoining restarts that tester's count.
 
 ---
 
@@ -764,6 +983,177 @@ Most developers have three to eight people they can ask. You don't need to find 
 
 ---
 
+## Base44: publish on Google Play and get your 12 testers
+URL: https://testerexchange.com/guide/get-12-testers-base44/
+
+Short answer: Base44 does not skip Google's rule. Base44 builds web apps. To get an Android .aab you need the project code (check whether your plan lets you sync or export it, for example to GitHub) so you can wrap it with Capacitor. Wrapping only a live URL is possible but risks a rejection for low functionality. Then your account needs 12 testers opted in for 14 days in a row before you can apply for production. This guide covers the path in order and includes a prompt you can paste into your AI assistant.
+
+### From Base44 to Google Play
+
+Base44 builds web apps. To get an Android .aab you need the project code (check whether your plan lets you sync or export it, for example to GitHub) so you can wrap it with Capacitor. Wrapping only a live URL is possible but risks a rejection for low functionality.
+
+What Base44 gives you is a web app hosted by Base44. Google Play only takes a signed Android App Bundle (.aab), so the work is getting from one to the other. Features and export options of any builder change often, so check Base44's current documentation for your plan.
+
+### Wrap the web app with Capacitor
+
+Capacitor is an open-source runtime that loads your built web files inside an Android app. The AI prompt below asks your builder (or any coding assistant) to set it up.
+
+1. Get the project code out of Base44 (GitHub sync or download) and open it on your computer. Install Node.js and Android Studio.
+2. Choose an application ID like com.yourname.yourapp. It must be unique and it can never be changed after you upload to Google Play.
+3. Run npx cap add android once, then npx cap sync android after every web build.
+4. Open the Android project (npx cap open android) and create a signing key in Android Studio: Build, Generate Signed Bundle / APK, Android App Bundle. Keep the key file and passwords safe; you need them for every update.
+5. Test the .aab on a real phone before you upload it.
+
+Give the app something a plain website does not: working offline pages, native share, notifications or at least a good mobile layout and a real purpose. Google can reject apps that only repackage a website without added value.
+
+### Run the closed test: 12 testers for 14 days
+
+Google requires personal developer accounts created after 13 November 2023 to run a closed test with at least 12 testers who stay opted in for 14 days in a row before they can apply for production access. The requirement is the same whatever tool built Base44 app.
+
+1. In Play Console, create the app (name, default language, app or game, free or paid) and fill in the declarations Google asks for.
+2. Open Test and release, then Testing, then Closed testing. Create a release and upload your signed .aab file.
+3. Under Testers, add an email list or a Google Group. If you use Tester Exchange, the group to add is testerexchange-testers@googlegroups.com and we add our testers to it.
+4. Check Countries / regions includes the countries your testers live in.
+5. Send the release for review. When the app status is Published, share the opt-in link; each tester must open it and accept.
+6. Keep at least 12 testers opted in for 14 consecutive days. Aim for 15 so one dropout does not move your date.
+7. When the Dashboard shows the Apply for production button, apply and answer the three parts of the form.
+
+No friends with Android phones? Tester Exchange gives you real people on their own phones, each day they open your app is recorded, and dropouts are replaced. You can also test other developers' apps free at https://testerexchange.com/earn and each app you test brings a tester to yours.
+
+### Common mistakes
+
+- Do not use the Play Console "internal testing" track for the 12-tester requirement. It has to be a closed (or equivalent) test with 12 testers opted in.
+- Do not change the application ID after the first upload. A new ID is a new app and restarts the 14 days.
+- Do not hand testers a debug build or an .apk. Upload a signed .aab to the track so testers install from Google Play.
+- Make sure the app does real work on first launch. Testers who see a blank page or login wall they cannot pass will not keep using it.
+- Plan for 15 testers, not 12: dropouts before day 14 push the date back.
+
+### Frequently asked questions
+
+**Can I publish a Base44 app on Google Play?** Yes, once you have a signed Android App Bundle (.aab). Base44 builds web apps. To get an Android .aab you need the project code (check whether your plan lets you sync or export it, for example to GitHub) so you can wrap it with Capacitor. Wrapping only a live URL is possible but risks a rejection for low functionality.
+
+**Does Base44 get me the 12 testers?** No. The 12 testers are a Google Play requirement for new personal developer accounts, so you recruit them yourself or use a service. Tester Exchange provides real people on their own phones, or you can swap tests for free.
+
+**Do I need a new Play Console account for an AI-built app?** No. Google Play does not care which tool wrote the code. What matters is the account type: personal accounts created after 13 November 2023 need the 12-tester, 14-day closed test; organization accounts are not subject to that requirement.
+
+**Can the testers be the same for several apps?** Testers opt in per app. A person can test several of your apps, but each person has to opt in to each app separately.
+
+---
+
+## Bolt: publish on Google Play and get your 12 testers
+URL: https://testerexchange.com/guide/get-12-testers-bolt/
+
+Short answer: Bolt does not skip Google's rule. Bolt can generate web projects and, depending on the template you picked, mobile projects based on Expo. Check which one you have: a web project is wrapped with Capacitor, an Expo project is built with EAS Build. Then your account needs 12 testers opted in for 14 days in a row before you can apply for production. This guide covers the path in order and includes a prompt you can paste into your AI assistant.
+
+### From Bolt to Google Play
+
+Bolt can generate web projects and, depending on the template you picked, mobile projects based on Expo. Check which one you have: a web project is wrapped with Capacitor, an Expo project is built with EAS Build.
+
+What Bolt gives you is a web project (or an Expo project if you chose a mobile template). Google Play only takes a signed Android App Bundle (.aab), so the work is getting from one to the other. Features and export options of any builder change often, so check Bolt's current documentation for your plan.
+
+### Wrap the web app with Capacitor
+
+Capacitor is an open-source runtime that loads your built web files inside an Android app. The AI prompt below asks your builder (or any coding assistant) to set it up.
+
+1. Get the project code out of Bolt (GitHub sync or download) and open it on your computer. Install Node.js and Android Studio.
+2. Choose an application ID like com.yourname.yourapp. It must be unique and it can never be changed after you upload to Google Play.
+3. Run npx cap add android once, then npx cap sync android after every web build.
+4. Open the Android project (npx cap open android) and create a signing key in Android Studio: Build, Generate Signed Bundle / APK, Android App Bundle. Keep the key file and passwords safe; you need them for every update.
+5. Test the .aab on a real phone before you upload it.
+
+Give the app something a plain website does not: working offline pages, native share, notifications or at least a good mobile layout and a real purpose. Google can reject apps that only repackage a website without added value.
+
+### Run the closed test: 12 testers for 14 days
+
+Google requires personal developer accounts created after 13 November 2023 to run a closed test with at least 12 testers who stay opted in for 14 days in a row before they can apply for production access. The requirement is the same whatever tool built Bolt app.
+
+1. In Play Console, create the app (name, default language, app or game, free or paid) and fill in the declarations Google asks for.
+2. Open Test and release, then Testing, then Closed testing. Create a release and upload your signed .aab file.
+3. Under Testers, add an email list or a Google Group. If you use Tester Exchange, the group to add is testerexchange-testers@googlegroups.com and we add our testers to it.
+4. Check Countries / regions includes the countries your testers live in.
+5. Send the release for review. When the app status is Published, share the opt-in link; each tester must open it and accept.
+6. Keep at least 12 testers opted in for 14 consecutive days. Aim for 15 so one dropout does not move your date.
+7. When the Dashboard shows the Apply for production button, apply and answer the three parts of the form.
+
+No friends with Android phones? Tester Exchange gives you real people on their own phones, each day they open your app is recorded, and dropouts are replaced. You can also test other developers' apps free at https://testerexchange.com/earn and each app you test brings a tester to yours.
+
+### Common mistakes
+
+- Do not use the Play Console "internal testing" track for the 12-tester requirement. It has to be a closed (or equivalent) test with 12 testers opted in.
+- Do not change the application ID after the first upload. A new ID is a new app and restarts the 14 days.
+- Do not hand testers a debug build or an .apk. Upload a signed .aab to the track so testers install from Google Play.
+- Make sure the app does real work on first launch. Testers who see a blank page or login wall they cannot pass will not keep using it.
+- Plan for 15 testers, not 12: dropouts before day 14 push the date back.
+
+### Frequently asked questions
+
+**Can I publish a Bolt app on Google Play?** Yes, once you have a signed Android App Bundle (.aab). Bolt can generate web projects and, depending on the template you picked, mobile projects based on Expo. Check which one you have: a web project is wrapped with Capacitor, an Expo project is built with EAS Build.
+
+**Does Bolt get me the 12 testers?** No. The 12 testers are a Google Play requirement for new personal developer accounts, so you recruit them yourself or use a service. Tester Exchange provides real people on their own phones, or you can swap tests for free.
+
+**Do I need a new Play Console account for an AI-built app?** No. Google Play does not care which tool wrote the code. What matters is the account type: personal accounts created after 13 November 2023 need the 12-tester, 14-day closed test; organization accounts are not subject to that requirement.
+
+**Can the testers be the same for several apps?** Testers opt in per app. A person can test several of your apps, but each person has to opt in to each app separately.
+
+---
+
+## Capacitor: publish on Google Play and get your 12 testers
+URL: https://testerexchange.com/guide/get-12-testers-capacitor/
+
+Short answer: Capacitor does not skip Google's rule. Capacitor puts your web app inside a native Android project. You build a signed release bundle in Android Studio and upload it to a closed testing track. Then your account needs 12 testers opted in for 14 days in a row before you can apply for production. This guide covers the path in order and includes a prompt you can paste into your AI assistant.
+
+### From Capacitor to Google Play
+
+Capacitor puts your web app inside a native Android project. You build a signed release bundle in Android Studio and upload it to a closed testing track.
+
+What Capacitor gives you is a native Android project that hosts your web app. Google Play only takes a signed Android App Bundle (.aab), so the work is getting from one to the other. Features and export options of any builder change often, so check Capacitor's current documentation for your plan.
+
+### Build the signed bundle
+
+Capacitor is an open-source runtime that loads your built web files inside an Android app. The AI prompt below asks your builder (or any coding assistant) to set it up.
+
+1. Run your normal web build so your output folder (for example dist or build) is up to date.
+2. Choose an application ID like com.yourname.yourapp. It must be unique and it can never be changed after you upload to Google Play.
+3. Run npx cap add android once, then npx cap sync android after every web build.
+4. Open the Android project (npx cap open android) and create a signing key in Android Studio: Build, Generate Signed Bundle / APK, Android App Bundle. Keep the key file and passwords safe; you need them for every update.
+5. Test the .aab on a real phone before you upload it.
+
+Give the app something a plain website does not: working offline pages, native share, notifications or at least a good mobile layout and a real purpose. Google can reject apps that only repackage a website without added value.
+
+### Run the closed test: 12 testers for 14 days
+
+Google requires personal developer accounts created after 13 November 2023 to run a closed test with at least 12 testers who stay opted in for 14 days in a row before they can apply for production access. The requirement is the same whatever tool built Capacitor app.
+
+1. In Play Console, create the app (name, default language, app or game, free or paid) and fill in the declarations Google asks for.
+2. Open Test and release, then Testing, then Closed testing. Create a release and upload your signed .aab file.
+3. Under Testers, add an email list or a Google Group. If you use Tester Exchange, the group to add is testerexchange-testers@googlegroups.com and we add our testers to it.
+4. Check Countries / regions includes the countries your testers live in.
+5. Send the release for review. When the app status is Published, share the opt-in link; each tester must open it and accept.
+6. Keep at least 12 testers opted in for 14 consecutive days. Aim for 15 so one dropout does not move your date.
+7. When the Dashboard shows the Apply for production button, apply and answer the three parts of the form.
+
+No friends with Android phones? Tester Exchange gives you real people on their own phones, each day they open your app is recorded, and dropouts are replaced. You can also test other developers' apps free at https://testerexchange.com/earn and each app you test brings a tester to yours.
+
+### Common mistakes
+
+- Do not use the Play Console "internal testing" track for the 12-tester requirement. It has to be a closed (or equivalent) test with 12 testers opted in.
+- Do not change the application ID after the first upload. A new ID is a new app and restarts the 14 days.
+- Do not hand testers a debug build or an .apk. Upload a signed .aab to the track so testers install from Google Play.
+- Make sure the app does real work on first launch. Testers who see a blank page or login wall they cannot pass will not keep using it.
+- Plan for 15 testers, not 12: dropouts before day 14 push the date back.
+
+### Frequently asked questions
+
+**Can I publish a Capacitor app on Google Play?** Yes, once you have a signed Android App Bundle (.aab). Capacitor puts your web app inside a native Android project. You build a signed release bundle in Android Studio and upload it to a closed testing track.
+
+**Does Capacitor get me the 12 testers?** No. The 12 testers are a Google Play requirement for new personal developer accounts, so you recruit them yourself or use a service. Tester Exchange provides real people on their own phones, or you can swap tests for free.
+
+**Do I need a new Play Console account for an AI-built app?** No. Google Play does not care which tool wrote the code. What matters is the account type: personal accounts created after 13 November 2023 need the 12-tester, 14-day closed test; organization accounts are not subject to that requirement.
+
+**Can the testers be the same for several apps?** Testers opt in per app. A person can test several of your apps, but each person has to opt in to each app separately.
+
+---
+
 ## Built your Android app with Claude Code? Get your 12 testers for 14 days
 URL: https://testerexchange.com/guide/get-12-testers-claude-code/
 
@@ -874,6 +1264,169 @@ POST https://vvrlxzbngxfxddywidoq.supabase.co/rest/v1/rpc/agent_call with the pu
 
 ---
 
+## Emergent: publish on Google Play and get your 12 testers
+URL: https://testerexchange.com/guide/get-12-testers-emergent/
+
+Short answer: Emergent does not skip Google's rule. Emergent can produce web apps and mobile apps. Look at the code it gives you: a web project is wrapped with Capacitor, an Expo project is built with EAS Build. Either way the end result you upload to Google Play is a signed .aab file. Then your account needs 12 testers opted in for 14 days in a row before you can apply for production. This guide covers the path in order and includes a prompt you can paste into your AI assistant.
+
+### From Emergent to Google Play
+
+Emergent can produce web apps and mobile apps. Look at the code it gives you: a web project is wrapped with Capacitor, an Expo project is built with EAS Build. Either way the end result you upload to Google Play is a signed .aab file.
+
+What Emergent gives you is a web or mobile project. Google Play only takes a signed Android App Bundle (.aab), so the work is getting from one to the other. Features and export options of any builder change often, so check Emergent's current documentation for your plan.
+
+### Wrap the web app with Capacitor
+
+Capacitor is an open-source runtime that loads your built web files inside an Android app. The AI prompt below asks your builder (or any coding assistant) to set it up.
+
+1. Get the project code out of Emergent (GitHub sync or download) and open it on your computer. Install Node.js and Android Studio.
+2. Choose an application ID like com.yourname.yourapp. It must be unique and it can never be changed after you upload to Google Play.
+3. Run npx cap add android once, then npx cap sync android after every web build.
+4. Open the Android project (npx cap open android) and create a signing key in Android Studio: Build, Generate Signed Bundle / APK, Android App Bundle. Keep the key file and passwords safe; you need them for every update.
+5. Test the .aab on a real phone before you upload it.
+
+Give the app something a plain website does not: working offline pages, native share, notifications or at least a good mobile layout and a real purpose. Google can reject apps that only repackage a website without added value.
+
+### Run the closed test: 12 testers for 14 days
+
+Google requires personal developer accounts created after 13 November 2023 to run a closed test with at least 12 testers who stay opted in for 14 days in a row before they can apply for production access. The requirement is the same whatever tool built Emergent app.
+
+1. In Play Console, create the app (name, default language, app or game, free or paid) and fill in the declarations Google asks for.
+2. Open Test and release, then Testing, then Closed testing. Create a release and upload your signed .aab file.
+3. Under Testers, add an email list or a Google Group. If you use Tester Exchange, the group to add is testerexchange-testers@googlegroups.com and we add our testers to it.
+4. Check Countries / regions includes the countries your testers live in.
+5. Send the release for review. When the app status is Published, share the opt-in link; each tester must open it and accept.
+6. Keep at least 12 testers opted in for 14 consecutive days. Aim for 15 so one dropout does not move your date.
+7. When the Dashboard shows the Apply for production button, apply and answer the three parts of the form.
+
+No friends with Android phones? Tester Exchange gives you real people on their own phones, each day they open your app is recorded, and dropouts are replaced. You can also test other developers' apps free at https://testerexchange.com/earn and each app you test brings a tester to yours.
+
+### Common mistakes
+
+- Do not use the Play Console "internal testing" track for the 12-tester requirement. It has to be a closed (or equivalent) test with 12 testers opted in.
+- Do not change the application ID after the first upload. A new ID is a new app and restarts the 14 days.
+- Do not hand testers a debug build or an .apk. Upload a signed .aab to the track so testers install from Google Play.
+- Make sure the app does real work on first launch. Testers who see a blank page or login wall they cannot pass will not keep using it.
+- Plan for 15 testers, not 12: dropouts before day 14 push the date back.
+
+### Frequently asked questions
+
+**Can I publish a Emergent app on Google Play?** Yes, once you have a signed Android App Bundle (.aab). Emergent can produce web apps and mobile apps. Look at the code it gives you: a web project is wrapped with Capacitor, an Expo project is built with EAS Build. Either way the end result you upload to Google Play is a signed .aab file.
+
+**Does Emergent get me the 12 testers?** No. The 12 testers are a Google Play requirement for new personal developer accounts, so you recruit them yourself or use a service. Tester Exchange provides real people on their own phones, or you can swap tests for free.
+
+**Do I need a new Play Console account for an AI-built app?** No. Google Play does not care which tool wrote the code. What matters is the account type: personal accounts created after 13 November 2023 need the 12-tester, 14-day closed test; organization accounts are not subject to that requirement.
+
+**Can the testers be the same for several apps?** Testers opt in per app. A person can test several of your apps, but each person has to opt in to each app separately.
+
+---
+
+## Expo: publish on Google Play and get your 12 testers
+URL: https://testerexchange.com/guide/get-12-testers-expo/
+
+Short answer: Expo does not skip Google's rule. Expo apps are built into an Android App Bundle with EAS Build. Expo says to create the first release in Play Console yourself; later builds can be submitted from the command line. Then your account needs 12 testers opted in for 14 days in a row before you can apply for production. This guide covers the path in order and includes a prompt you can paste into your AI assistant.
+
+### From Expo to Google Play
+
+Expo apps are built into an Android App Bundle with EAS Build. Expo says to create the first release in Play Console yourself; later builds can be submitted from the command line.
+
+What Expo gives you is a React Native project. Google Play only takes a signed Android App Bundle (.aab), so the work is getting from one to the other. Features and export options of any builder change often, so check Expo's current documentation for your plan.
+
+### Build the .aab with EAS
+
+1. Set a unique android.package in app.json (for example com.yourname.yourapp). It cannot change after you upload.
+2. Make sure eas.json has a production profile that builds an app bundle.
+3. Run eas build --platform android --profile production. EAS can create and store the signing key for you.
+4. Download the .aab. Create the app in Play Console and upload this first build by hand to the closed testing track, as the Expo docs describe.
+5. For later updates you can use eas submit, with a Google service account key.
+
+### Run the closed test: 12 testers for 14 days
+
+Google requires personal developer accounts created after 13 November 2023 to run a closed test with at least 12 testers who stay opted in for 14 days in a row before they can apply for production access. The requirement is the same whatever tool built Expo app.
+
+1. In Play Console, create the app (name, default language, app or game, free or paid) and fill in the declarations Google asks for.
+2. Open Test and release, then Testing, then Closed testing. Create a release and upload your signed .aab file.
+3. Under Testers, add an email list or a Google Group. If you use Tester Exchange, the group to add is testerexchange-testers@googlegroups.com and we add our testers to it.
+4. Check Countries / regions includes the countries your testers live in.
+5. Send the release for review. When the app status is Published, share the opt-in link; each tester must open it and accept.
+6. Keep at least 12 testers opted in for 14 consecutive days. Aim for 15 so one dropout does not move your date.
+7. When the Dashboard shows the Apply for production button, apply and answer the three parts of the form.
+
+No friends with Android phones? Tester Exchange gives you real people on their own phones, each day they open your app is recorded, and dropouts are replaced. You can also test other developers' apps free at https://testerexchange.com/earn and each app you test brings a tester to yours.
+
+### Common mistakes
+
+- Do not use the Play Console "internal testing" track for the 12-tester requirement. It has to be a closed (or equivalent) test with 12 testers opted in.
+- Do not change the application ID after the first upload. A new ID is a new app and restarts the 14 days.
+- Do not hand testers a debug build or an .apk. Upload a signed .aab to the track so testers install from Google Play.
+- Make sure the app does real work on first launch. Testers who see a blank page or login wall they cannot pass will not keep using it.
+- Plan for 15 testers, not 12: dropouts before day 14 push the date back.
+
+### Frequently asked questions
+
+**Can I publish a Expo app on Google Play?** Yes, once you have a signed Android App Bundle (.aab). Expo apps are built into an Android App Bundle with EAS Build. Expo says to create the first release in Play Console yourself; later builds can be submitted from the command line.
+
+**Does Expo get me the 12 testers?** No. The 12 testers are a Google Play requirement for new personal developer accounts, so you recruit them yourself or use a service. Tester Exchange provides real people on their own phones, or you can swap tests for free.
+
+**Do I need a new Play Console account for an AI-built app?** No. Google Play does not care which tool wrote the code. What matters is the account type: personal accounts created after 13 November 2023 need the 12-tester, 14-day closed test; organization accounts are not subject to that requirement.
+
+**Can the testers be the same for several apps?** Testers opt in per app. A person can test several of your apps, but each person has to opt in to each app separately.
+
+---
+
+## FlutterFlow: publish on Google Play and get your 12 testers
+URL: https://testerexchange.com/guide/get-12-testers-flutterflow/
+
+Short answer: FlutterFlow does not skip Google's rule. FlutterFlow generates a real Flutter app, so you do not need a wrapper. FlutterFlow can build the Android release for you, or you can download the code and build it with the Flutter tool. Then your account needs 12 testers opted in for 14 days in a row before you can apply for production. This guide covers the path in order and includes a prompt you can paste into your AI assistant.
+
+### From FlutterFlow to Google Play
+
+FlutterFlow generates a real Flutter app, so you do not need a wrapper. FlutterFlow can build the Android release for you, or you can download the code and build it with the Flutter tool.
+
+What FlutterFlow gives you is a Flutter app. Google Play only takes a signed Android App Bundle (.aab), so the work is getting from one to the other. Features and export options of any builder change often, so check FlutterFlow's current documentation for your plan.
+
+### Produce the signed .aab
+
+1. Open your project settings and set the app name, a unique package name (for example com.yourname.yourapp), the icon and the version and build number. The package name cannot change after you upload.
+2. Use FlutterFlow's deploy options to build the Android release, or download the code and run flutter build appbundle.
+3. Let Google Play App Signing manage the final key when Play Console offers it, and keep your upload key safe.
+4. Install the build on a real phone and check the main flows.
+5. Create the app in Play Console and upload the .aab to a closed testing track.
+
+### Run the closed test: 12 testers for 14 days
+
+Google requires personal developer accounts created after 13 November 2023 to run a closed test with at least 12 testers who stay opted in for 14 days in a row before they can apply for production access. The requirement is the same whatever tool built FlutterFlow app.
+
+1. In Play Console, create the app (name, default language, app or game, free or paid) and fill in the declarations Google asks for.
+2. Open Test and release, then Testing, then Closed testing. Create a release and upload your signed .aab file.
+3. Under Testers, add an email list or a Google Group. If you use Tester Exchange, the group to add is testerexchange-testers@googlegroups.com and we add our testers to it.
+4. Check Countries / regions includes the countries your testers live in.
+5. Send the release for review. When the app status is Published, share the opt-in link; each tester must open it and accept.
+6. Keep at least 12 testers opted in for 14 consecutive days. Aim for 15 so one dropout does not move your date.
+7. When the Dashboard shows the Apply for production button, apply and answer the three parts of the form.
+
+No friends with Android phones? Tester Exchange gives you real people on their own phones, each day they open your app is recorded, and dropouts are replaced. You can also test other developers' apps free at https://testerexchange.com/earn and each app you test brings a tester to yours.
+
+### Common mistakes
+
+- Do not use the Play Console "internal testing" track for the 12-tester requirement. It has to be a closed (or equivalent) test with 12 testers opted in.
+- Do not change the application ID after the first upload. A new ID is a new app and restarts the 14 days.
+- Do not hand testers a debug build or an .apk. Upload a signed .aab to the track so testers install from Google Play.
+- Make sure the app does real work on first launch. Testers who see a blank page or login wall they cannot pass will not keep using it.
+- Plan for 15 testers, not 12: dropouts before day 14 push the date back.
+
+### Frequently asked questions
+
+**Can I publish a FlutterFlow app on Google Play?** Yes, once you have a signed Android App Bundle (.aab). FlutterFlow generates a real Flutter app, so you do not need a wrapper. FlutterFlow can build the Android release for you, or you can download the code and build it with the Flutter tool.
+
+**Does FlutterFlow get me the 12 testers?** No. The 12 testers are a Google Play requirement for new personal developer accounts, so you recruit them yourself or use a service. Tester Exchange provides real people on their own phones, or you can swap tests for free.
+
+**Do I need a new Play Console account for an AI-built app?** No. Google Play does not care which tool wrote the code. What matters is the account type: personal accounts created after 13 November 2023 need the 12-tester, 14-day closed test; organization accounts are not subject to that requirement.
+
+**Can the testers be the same for several apps?** Testers opt in per app. A person can test several of your apps, but each person has to opt in to each app separately.
+
+---
+
 ## Built your Android app with Gemini CLI? Get your 12 testers for 14 days
 URL: https://testerexchange.com/guide/get-12-testers-gemini-cli/
 
@@ -926,6 +1479,177 @@ POST https://vvrlxzbngxfxddywidoq.supabase.co/rest/v1/rpc/agent_call with the pu
 **Where does the AAB go?** Upload it to a closed testing release in Play Console, then add your testers' Google Group or email list on that track.
 
 **Is there a free way to get the 12 testers?** Yes. Test other developers' apps at https://testerexchange.com/earn; each app you test brings a tester to yours.
+
+---
+
+## Google AI Studio: publish on Google Play and get your 12 testers
+URL: https://testerexchange.com/guide/get-12-testers-google-ai-studio/
+
+Short answer: Google AI Studio does not skip Google's rule. AI Studio builds web apps. Download the code or send it to GitHub, then wrap it with Capacitor to get an Android App Bundle for Google Play. Then your account needs 12 testers opted in for 14 days in a row before you can apply for production. This guide covers the path in order and includes a prompt you can paste into your AI assistant.
+
+### From Google AI Studio to Google Play
+
+AI Studio builds web apps. Download the code or send it to GitHub, then wrap it with Capacitor to get an Android App Bundle for Google Play.
+
+What Google AI Studio gives you is a web app you can download or send to GitHub. Google Play only takes a signed Android App Bundle (.aab), so the work is getting from one to the other. Features and export options of any builder change often, so check Google AI Studio's current documentation for your plan.
+
+### Wrap the web app with Capacitor
+
+Capacitor is an open-source runtime that loads your built web files inside an Android app. The AI prompt below asks your builder (or any coding assistant) to set it up.
+
+1. Get the project code out of Google AI Studio (GitHub sync or download) and open it on your computer. Install Node.js and Android Studio.
+2. Choose an application ID like com.yourname.yourapp. It must be unique and it can never be changed after you upload to Google Play.
+3. Run npx cap add android once, then npx cap sync android after every web build.
+4. Open the Android project (npx cap open android) and create a signing key in Android Studio: Build, Generate Signed Bundle / APK, Android App Bundle. Keep the key file and passwords safe; you need them for every update.
+5. Test the .aab on a real phone before you upload it.
+
+Give the app something a plain website does not: working offline pages, native share, notifications or at least a good mobile layout and a real purpose. Google can reject apps that only repackage a website without added value.
+
+### Run the closed test: 12 testers for 14 days
+
+Google requires personal developer accounts created after 13 November 2023 to run a closed test with at least 12 testers who stay opted in for 14 days in a row before they can apply for production access. The requirement is the same whatever tool built Google AI Studio app.
+
+1. In Play Console, create the app (name, default language, app or game, free or paid) and fill in the declarations Google asks for.
+2. Open Test and release, then Testing, then Closed testing. Create a release and upload your signed .aab file.
+3. Under Testers, add an email list or a Google Group. If you use Tester Exchange, the group to add is testerexchange-testers@googlegroups.com and we add our testers to it.
+4. Check Countries / regions includes the countries your testers live in.
+5. Send the release for review. When the app status is Published, share the opt-in link; each tester must open it and accept.
+6. Keep at least 12 testers opted in for 14 consecutive days. Aim for 15 so one dropout does not move your date.
+7. When the Dashboard shows the Apply for production button, apply and answer the three parts of the form.
+
+No friends with Android phones? Tester Exchange gives you real people on their own phones, each day they open your app is recorded, and dropouts are replaced. You can also test other developers' apps free at https://testerexchange.com/earn and each app you test brings a tester to yours.
+
+### Common mistakes
+
+- Do not use the Play Console "internal testing" track for the 12-tester requirement. It has to be a closed (or equivalent) test with 12 testers opted in.
+- Do not change the application ID after the first upload. A new ID is a new app and restarts the 14 days.
+- Do not hand testers a debug build or an .apk. Upload a signed .aab to the track so testers install from Google Play.
+- Make sure the app does real work on first launch. Testers who see a blank page or login wall they cannot pass will not keep using it.
+- Plan for 15 testers, not 12: dropouts before day 14 push the date back.
+
+### Frequently asked questions
+
+**Can I publish a Google AI Studio app on Google Play?** Yes, once you have a signed Android App Bundle (.aab). AI Studio builds web apps. Download the code or send it to GitHub, then wrap it with Capacitor to get an Android App Bundle for Google Play.
+
+**Does Google AI Studio get me the 12 testers?** No. The 12 testers are a Google Play requirement for new personal developer accounts, so you recruit them yourself or use a service. Tester Exchange provides real people on their own phones, or you can swap tests for free.
+
+**Do I need a new Play Console account for an AI-built app?** No. Google Play does not care which tool wrote the code. What matters is the account type: personal accounts created after 13 November 2023 need the 12-tester, 14-day closed test; organization accounts are not subject to that requirement.
+
+**Can the testers be the same for several apps?** Testers opt in per app. A person can test several of your apps, but each person has to opt in to each app separately.
+
+---
+
+## Lovable: publish on Google Play and get your 12 testers
+URL: https://testerexchange.com/guide/get-12-testers-lovable/
+
+Short answer: Lovable does not skip Google's rule. Lovable builds web apps, so there is no Android file to upload yet. To publish on Google Play you wrap the web app in a small Android shell, most commonly with Capacitor, and build a signed Android App Bundle (.aab). Then your account needs 12 testers opted in for 14 days in a row before you can apply for production. This guide covers the path in order and includes a prompt you can paste into your AI assistant.
+
+### From Lovable to Google Play
+
+Lovable builds web apps, so there is no Android file to upload yet. To publish on Google Play you wrap the web app in a small Android shell, most commonly with Capacitor, and build a signed Android App Bundle (.aab).
+
+What Lovable gives you is a web app (a project you can sync to GitHub). Google Play only takes a signed Android App Bundle (.aab), so the work is getting from one to the other. Features and export options of any builder change often, so check Lovable's current documentation for your plan.
+
+### Wrap the web app with Capacitor
+
+Capacitor is an open-source runtime that loads your built web files inside an Android app. The AI prompt below asks your builder (or any coding assistant) to set it up.
+
+1. Get the project code out of Lovable (GitHub sync or download) and open it on your computer. Install Node.js and Android Studio.
+2. Choose an application ID like com.yourname.yourapp. It must be unique and it can never be changed after you upload to Google Play.
+3. Run npx cap add android once, then npx cap sync android after every web build.
+4. Open the Android project (npx cap open android) and create a signing key in Android Studio: Build, Generate Signed Bundle / APK, Android App Bundle. Keep the key file and passwords safe; you need them for every update.
+5. Test the .aab on a real phone before you upload it.
+
+Give the app something a plain website does not: working offline pages, native share, notifications or at least a good mobile layout and a real purpose. Google can reject apps that only repackage a website without added value.
+
+### Run the closed test: 12 testers for 14 days
+
+Google requires personal developer accounts created after 13 November 2023 to run a closed test with at least 12 testers who stay opted in for 14 days in a row before they can apply for production access. The requirement is the same whatever tool built Lovable app.
+
+1. In Play Console, create the app (name, default language, app or game, free or paid) and fill in the declarations Google asks for.
+2. Open Test and release, then Testing, then Closed testing. Create a release and upload your signed .aab file.
+3. Under Testers, add an email list or a Google Group. If you use Tester Exchange, the group to add is testerexchange-testers@googlegroups.com and we add our testers to it.
+4. Check Countries / regions includes the countries your testers live in.
+5. Send the release for review. When the app status is Published, share the opt-in link; each tester must open it and accept.
+6. Keep at least 12 testers opted in for 14 consecutive days. Aim for 15 so one dropout does not move your date.
+7. When the Dashboard shows the Apply for production button, apply and answer the three parts of the form.
+
+No friends with Android phones? Tester Exchange gives you real people on their own phones, each day they open your app is recorded, and dropouts are replaced. You can also test other developers' apps free at https://testerexchange.com/earn and each app you test brings a tester to yours.
+
+### Common mistakes
+
+- Do not use the Play Console "internal testing" track for the 12-tester requirement. It has to be a closed (or equivalent) test with 12 testers opted in.
+- Do not change the application ID after the first upload. A new ID is a new app and restarts the 14 days.
+- Do not hand testers a debug build or an .apk. Upload a signed .aab to the track so testers install from Google Play.
+- Make sure the app does real work on first launch. Testers who see a blank page or login wall they cannot pass will not keep using it.
+- Plan for 15 testers, not 12: dropouts before day 14 push the date back.
+
+### Frequently asked questions
+
+**Can I publish a Lovable app on Google Play?** Yes, once you have a signed Android App Bundle (.aab). Lovable builds web apps, so there is no Android file to upload yet. To publish on Google Play you wrap the web app in a small Android shell, most commonly with Capacitor, and build a signed Android App Bundle (.aab).
+
+**Does Lovable get me the 12 testers?** No. The 12 testers are a Google Play requirement for new personal developer accounts, so you recruit them yourself or use a service. Tester Exchange provides real people on their own phones, or you can swap tests for free.
+
+**Do I need a new Play Console account for an AI-built app?** No. Google Play does not care which tool wrote the code. What matters is the account type: personal accounts created after 13 November 2023 need the 12-tester, 14-day closed test; organization accounts are not subject to that requirement.
+
+**Can the testers be the same for several apps?** Testers opt in per app. A person can test several of your apps, but each person has to opt in to each app separately.
+
+---
+
+## Replit: publish on Google Play and get your 12 testers
+URL: https://testerexchange.com/guide/get-12-testers-replit/
+
+Short answer: Replit does not skip Google's rule. Replit projects can be web apps or Expo (React Native) mobile apps. A web app is wrapped with Capacitor; an Expo app is built into an .aab with EAS Build. Look at the project files to see which one you have. Then your account needs 12 testers opted in for 14 days in a row before you can apply for production. This guide covers the path in order and includes a prompt you can paste into your AI assistant.
+
+### From Replit to Google Play
+
+Replit projects can be web apps or Expo (React Native) mobile apps. A web app is wrapped with Capacitor; an Expo app is built into an .aab with EAS Build. Look at the project files to see which one you have.
+
+What Replit gives you is a web app or an Expo mobile project. Google Play only takes a signed Android App Bundle (.aab), so the work is getting from one to the other. Features and export options of any builder change often, so check Replit's current documentation for your plan.
+
+### Wrap the web app with Capacitor
+
+Capacitor is an open-source runtime that loads your built web files inside an Android app. The AI prompt below asks your builder (or any coding assistant) to set it up.
+
+1. Get the project code out of Replit (GitHub sync or download) and open it on your computer. Install Node.js and Android Studio.
+2. Choose an application ID like com.yourname.yourapp. It must be unique and it can never be changed after you upload to Google Play.
+3. Run npx cap add android once, then npx cap sync android after every web build.
+4. Open the Android project (npx cap open android) and create a signing key in Android Studio: Build, Generate Signed Bundle / APK, Android App Bundle. Keep the key file and passwords safe; you need them for every update.
+5. Test the .aab on a real phone before you upload it.
+
+Give the app something a plain website does not: working offline pages, native share, notifications or at least a good mobile layout and a real purpose. Google can reject apps that only repackage a website without added value.
+
+### Run the closed test: 12 testers for 14 days
+
+Google requires personal developer accounts created after 13 November 2023 to run a closed test with at least 12 testers who stay opted in for 14 days in a row before they can apply for production access. The requirement is the same whatever tool built Replit app.
+
+1. In Play Console, create the app (name, default language, app or game, free or paid) and fill in the declarations Google asks for.
+2. Open Test and release, then Testing, then Closed testing. Create a release and upload your signed .aab file.
+3. Under Testers, add an email list or a Google Group. If you use Tester Exchange, the group to add is testerexchange-testers@googlegroups.com and we add our testers to it.
+4. Check Countries / regions includes the countries your testers live in.
+5. Send the release for review. When the app status is Published, share the opt-in link; each tester must open it and accept.
+6. Keep at least 12 testers opted in for 14 consecutive days. Aim for 15 so one dropout does not move your date.
+7. When the Dashboard shows the Apply for production button, apply and answer the three parts of the form.
+
+No friends with Android phones? Tester Exchange gives you real people on their own phones, each day they open your app is recorded, and dropouts are replaced. You can also test other developers' apps free at https://testerexchange.com/earn and each app you test brings a tester to yours.
+
+### Common mistakes
+
+- Do not use the Play Console "internal testing" track for the 12-tester requirement. It has to be a closed (or equivalent) test with 12 testers opted in.
+- Do not change the application ID after the first upload. A new ID is a new app and restarts the 14 days.
+- Do not hand testers a debug build or an .apk. Upload a signed .aab to the track so testers install from Google Play.
+- Make sure the app does real work on first launch. Testers who see a blank page or login wall they cannot pass will not keep using it.
+- Plan for 15 testers, not 12: dropouts before day 14 push the date back.
+
+### Frequently asked questions
+
+**Can I publish a Replit app on Google Play?** Yes, once you have a signed Android App Bundle (.aab). Replit projects can be web apps or Expo (React Native) mobile apps. A web app is wrapped with Capacitor; an Expo app is built into an .aab with EAS Build. Look at the project files to see which one you have.
+
+**Does Replit get me the 12 testers?** No. The 12 testers are a Google Play requirement for new personal developer accounts, so you recruit them yourself or use a service. Tester Exchange provides real people on their own phones, or you can swap tests for free.
+
+**Do I need a new Play Console account for an AI-built app?** No. Google Play does not care which tool wrote the code. What matters is the account type: personal accounts created after 13 November 2023 need the 12-tester, 14-day closed test; organization accounts are not subject to that requirement.
+
+**Can the testers be the same for several apps?** Testers opt in per app. A person can test several of your apps, but each person has to opt in to each app separately.
 
 ---
 
@@ -2540,6 +3264,50 @@ Tester Exchange sends real people who use your app on their own Android phones a
 
 ---
 
+## Tester Exchange referral program
+URL: https://testerexchange.com/guide/referral-program/
+
+Short answer: share your personal link. When a friend signs up through it and their phone logs a first verified day of testing, you both receive credits. Credits pay for testers on your own app. This page describes the program as it runs today.
+
+### How it works
+
+1. Sign in to Tester Exchange and open the invite card to copy your personal link. It is the site address with ?ref= and your code at the end.
+2. A friend opens your link and signs up. The link is remembered until they sign in.
+3. They become a tester and their phone logs a first verified day of use. A verified day needs the companion app and real foreground use of a tested app.
+4. At that moment both of you receive credits automatically. There is nothing to claim.
+
+### What you receive
+
+- You (the inviter): 30 credits for each friend whose first verified day is logged.
+- Your friend: 15 credits.
+- Credits are used to buy tester seats on your own app. One tester seat costs 15 credits (14 tester-days plus a 1-credit feedback budget), so one invite covers two testers' worth of credits.
+
+These amounts are the current settings and can change; the invite card in the app always shows today's numbers.
+
+### The rules
+
+- A new account can attach an inviter once, within 14 days of signing up.
+- You cannot invite yourself, and two people cannot be each other's inviter.
+- Rewards are limited to 50 rewarded invites per person.
+- The reward is paid once per invited person, on their first verified day. Phones are registered, so one phone cannot earn for two accounts.
+- Credits are for use inside Tester Exchange. They are not cash and do not convert back to money.
+
+### What this program is not
+
+This is a one-time credit reward for each real new tester. It is not a recurring commission on purchases and there is no cash payout for referrals at the moment.
+
+### Frequently asked questions
+
+**Where do I find my referral link?** Sign in at https://testerexchange.com/ and open the invite card; your link is shown there with a copy button.
+
+**When are credits paid?** Automatically, when the invited person's phone logs their first verified day of testing.
+
+**Is there a limit?** Yes: 50 rewarded invites per person, and a new account can attach an inviter only within 14 days of signing up.
+
+**Can I withdraw referral credits as cash?** No. Credits are used inside Tester Exchange to buy tester seats.
+
+---
+
 ## How to set up a closed testing track in Play Console, step by step
 URL: https://testerexchange.com/guide/set-up-closed-testing-track/
 
@@ -2667,6 +3435,110 @@ Test for test is simply two developers meeting that rule for each other.
 **Do I have to pay?** No. You pay with about a minute a day per app you test. Paying is optional and only makes it faster.
 
 **Do I need an Android phone?** Yes. These are Google Play closed tests, tested on an Android phone signed in to the account your Play Store uses.
+
+---
+
+## TWA app for closed testing: how to switch to a WebView or Capacitor shell
+URL: https://testerexchange.com/guide/twa-app-closed-testing-webview-fix/
+
+Short answer: Google Play accepts a Trusted Web Activity (TWA) like any app, so the 12-tester rule is the same. But some tester services will not take TWA apps, and daily use of one can be hard to measure per app. If that is your case, moving to a Capacitor (WebView) shell is a small change. This guide explains the difference and the steps.
+
+### TWA vs WebView, in plain terms
+
+Neither is better for users on its own. The difference matters for testing because services that record daily use per app read what is in the foreground, and with a TWA the screen belongs to Chrome. We have not verified that Tester Exchange records TWA use reliably, so we recommend a WebView or Capacitor shell for the test.
+
+- TWA: Chrome draws your site full screen. Your app is a thin launcher. It is what PWABuilder and Bubblewrap produce, and it needs Digital Asset Links to hide the address bar.
+- WebView / Capacitor: your app draws the screen itself and shows your web content inside it. You can add native features and your app is the one in the foreground.
+
+### Switch from TWA to a Capacitor shell
+
+1. Keep your site. Nothing about your website changes.
+2. Keep the same application ID if the TWA is already on a closed track, so you do not restart the count; otherwise start the new app with the ID you will keep.
+3. Add Capacitor: npx cap init, npm i @capacitor/android, npx cap add android. Point server.url at your live HTTPS site, or bundle your build folder as webDir.
+4. Raise the version code above the TWA release, build a signed .aab in Android Studio and upload it as a new release on the same closed track.
+5. Testers who are already opted in keep their opt-in; they receive the update from Google Play.
+
+### Run the closed test: 12 testers for 14 days
+
+Google requires personal developer accounts created after 13 November 2023 to run a closed test with at least 12 testers who stay opted in for 14 days in a row before they can apply for production access. The requirement is the same whatever tool built TWA or WebView app.
+
+1. In Play Console, create the app (name, default language, app or game, free or paid) and fill in the declarations Google asks for.
+2. Open Test and release, then Testing, then Closed testing. Create a release and upload your signed .aab file.
+3. Under Testers, add an email list or a Google Group. If you use Tester Exchange, the group to add is testerexchange-testers@googlegroups.com and we add our testers to it.
+4. Check Countries / regions includes the countries your testers live in.
+5. Send the release for review. When the app status is Published, share the opt-in link; each tester must open it and accept.
+6. Keep at least 12 testers opted in for 14 consecutive days. Aim for 15 so one dropout does not move your date.
+7. When the Dashboard shows the Apply for production button, apply and answer the three parts of the form.
+
+No friends with Android phones? Tester Exchange gives you real people on their own phones, each day they open your app is recorded, and dropouts are replaced. You can also test other developers' apps free at https://testerexchange.com/earn and each app you test brings a tester to yours.
+
+### Common mistakes
+
+- Do not create a new application ID just to change shells; that restarts everything.
+- Do not remove testers from the track while you switch.
+- Do not skip a real-device test: a WebView app can behave differently from Chrome (for example with sign-in pop-ups).
+- Keep the Digital Asset Links file in place only if you still ship a TWA.
+
+### Frequently asked questions
+
+**Does Google Play accept TWA apps for closed testing?** Yes. Google treats a TWA as an ordinary app. The 12-tester, 14-day closed test is the same.
+
+**Will switching shells restart my 14 days?** If you upload a new release to the same app and track, testers stay opted in. Creating a new app with a new application ID starts a new test.
+
+**Do I have to give up my PWA?** No. The website stays. Only the Android shell changes.
+
+---
+
+## Website to Android app: publish on Google Play with 12 testers
+URL: https://testerexchange.com/guide/website-to-android-app-12-testers/
+
+Short answer: you can put a website on Google Play, but you still build a signed Android App Bundle and your new personal account still needs a closed test with 12 testers opted in for 14 days. This guide covers the two common approaches and the closed test.
+
+### Two ways to wrap a website
+
+Your site should work well on a phone first: responsive layout, fast loading, HTTPS, and a clear purpose. Google can reject apps that only repackage a website without added value, so give the app something useful of its own.
+
+- WebView or Capacitor: a native Android app loads your site (or a bundled copy) inside its own window. You can add native features. This is the route we recommend.
+- Trusted Web Activity (TWA): Chrome shows your site full screen under your app name and you prove ownership with Digital Asset Links. Tools like PWABuilder generate one. See our TWA guide for the trade-offs.
+
+### Build the Capacitor route
+
+1. Make sure your site builds to a folder of static files, or point Capacitor at your live HTTPS URL for a hosted site.
+2. Install Node.js and Android Studio.
+3. Choose an application ID like com.yourname.yourapp. It cannot change after upload.
+4. Run npx cap add android, then npx cap sync android, then npx cap open android.
+5. Create a signing key and build a signed Android App Bundle in Android Studio. Test it on a real phone.
+
+### Run the closed test: 12 testers for 14 days
+
+Google requires personal developer accounts created after 13 November 2023 to run a closed test with at least 12 testers who stay opted in for 14 days in a row before they can apply for production access. The requirement is the same whatever tool built website app.
+
+1. In Play Console, create the app (name, default language, app or game, free or paid) and fill in the declarations Google asks for.
+2. Open Test and release, then Testing, then Closed testing. Create a release and upload your signed .aab file.
+3. Under Testers, add an email list or a Google Group. If you use Tester Exchange, the group to add is testerexchange-testers@googlegroups.com and we add our testers to it.
+4. Check Countries / regions includes the countries your testers live in.
+5. Send the release for review. When the app status is Published, share the opt-in link; each tester must open it and accept.
+6. Keep at least 12 testers opted in for 14 consecutive days. Aim for 15 so one dropout does not move your date.
+7. When the Dashboard shows the Apply for production button, apply and answer the three parts of the form.
+
+No friends with Android phones? Tester Exchange gives you real people on their own phones, each day they open your app is recorded, and dropouts are replaced. You can also test other developers' apps free at https://testerexchange.com/earn and each app you test brings a tester to yours.
+
+### Common mistakes
+
+- Do not upload an app that only shows a "this site is down" or blank screen when offline; add a friendly offline state.
+- Do not change the application ID after upload.
+- Do not rely on a TWA if you want daily use measured per app; see the TWA guide.
+- Aim for 15 testers so a dropout does not move your date.
+
+### Frequently asked questions
+
+**Can I just submit my website URL to Google Play?** No. Google Play takes a signed Android App Bundle. A wrapper such as Capacitor or a Trusted Web Activity packages your site into one.
+
+**Is a website wrapper allowed?** Google reviews every app against its developer policies, which include expectations about functionality and user experience. An app that adds nothing beyond a website is at risk, so add real value and read the policy pages for your case.
+
+**Do I need a new Play Console account for an AI-built app?** No. Google Play does not care which tool wrote the code. What matters is the account type: personal accounts created after 13 November 2023 need the 12-tester, 14-day closed test; organization accounts are not subject to that requirement.
+
+**Can the testers be the same for several apps?** Testers opt in per app. A person can test several of your apps, but each person has to opt in to each app separately.
 
 ---
 

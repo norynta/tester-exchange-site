@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url><loc>https://testerexchange.com/</loc><lastmod>2026-11-21</lastmod>
+  <url><loc>https://testerexchange.com/</loc><lastmod>2026-11-24</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://testerexchange.com/"/>
     <xhtml:link rel="alternate" hreflang="am" href="https://testerexchange.com/am/"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://testerexchange.com/ar/"/>
@@ -58,7 +58,7 @@
     <xhtml:link rel="alternate" hreflang="zu" href="https://testerexchange.com/zu/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://testerexchange.com/"/>
   </url>
-  <url><loc>https://testerexchange.com/agents/</loc><lastmod>2026-11-21</lastmod></url>
+  <url><loc>https://testerexchange.com/agents/</loc><lastmod>2026-11-24</lastmod></url>
   <url><loc>https://testerexchange.com/guide/</loc><lastmod>2026-11-19</lastmod></url>
   <url><loc>https://testerexchange.com/am/</loc><lastmod>2026-11-06</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://testerexchange.com/"/>
@@ -6382,6 +6382,7 @@
     <xhtml:link rel="alternate" hreflang="zu" href="https://testerexchange.com/zu/12-testers-app-builders/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://testerexchange.com/guide/12-testers-app-builders/"/>
   </url>
+  <url><loc>https://testerexchange.com/guide/add-new-testers-during-closed-test/</loc><lastmod>2026-11-24</lastmod></url>
   <url><loc>https://testerexchange.com/guide/ai-builders/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://testerexchange.com/guide/ai-builders/"/>
     <xhtml:link rel="alternate" hreflang="am" href="https://testerexchange.com/am/ai-builders/"/>
@@ -12762,6 +12763,7 @@
     <xhtml:link rel="alternate" hreflang="zu" href="https://testerexchange.com/zu/app-not-available-for-testers/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://testerexchange.com/guide/app-not-available-for-testers/"/>
   </url>
+  <url><loc>https://testerexchange.com/guide/apply-for-production-button-missing/</loc><lastmod>2026-11-24</lastmod></url>
   <url><loc>https://testerexchange.com/guide/automate-closed-testing-with-ai-agents/</loc><lastmod>2026-11-06</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://testerexchange.com/guide/automate-closed-testing-with-ai-agents/"/>
     <xhtml:link rel="alternate" hreflang="am" href="https://testerexchange.com/am/automate-closed-testing-with-ai-agents/"/>
@@ -22332,6 +22334,9 @@
     <xhtml:link rel="alternate" hreflang="zu" href="https://testerexchange.com/zu/best-way-to-get-12-testers/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://testerexchange.com/guide/best-way-to-get-12-testers/"/>
   </url>
+  <url><loc>https://testerexchange.com/guide/closed-tester-uninstalled-the-app/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://testerexchange.com/guide/closed-testers-in-other-countries/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://testerexchange.com/guide/closed-testing-0-testers-opted-in/</loc><lastmod>2026-11-24</lastmod></url>
   <url><loc>https://testerexchange.com/guide/closed-testing-for-games/</loc><lastmod>2026-11-06</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://testerexchange.com/guide/closed-testing-for-games/"/>
     <xhtml:link rel="alternate" hreflang="am" href="https://testerexchange.com/am/closed-testing-for-games/"/>
@@ -25522,6 +25527,8 @@
     <xhtml:link rel="alternate" hreflang="zu" href="https://testerexchange.com/zu/closed-testing-for-games/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://testerexchange.com/guide/closed-testing-for-games/"/>
   </url>
+  <url><loc>https://testerexchange.com/guide/closed-testing-on-your-own-phone/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://testerexchange.com/guide/closed-testing-only-12-testers/</loc><lastmod>2026-11-24</lastmod></url>
   <url><loc>https://testerexchange.com/guide/does-14-day-closed-test-reset/</loc><lastmod>2026-11-06</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://testerexchange.com/guide/does-14-day-closed-test-reset/"/>
     <xhtml:link rel="alternate" hreflang="am" href="https://testerexchange.com/am/does-14-day-closed-test-reset/"/>
@@ -38282,6 +38289,9 @@
     <xhtml:link rel="alternate" hreflang="zu" href="https://testerexchange.com/zu/friends-family-closed-testers/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://testerexchange.com/guide/friends-family-closed-testers/"/>
   </url>
+  <url><loc>https://testerexchange.com/guide/get-12-testers-base44/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://testerexchange.com/guide/get-12-testers-bolt/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://testerexchange.com/guide/get-12-testers-capacitor/</loc><lastmod>2026-11-24</lastmod></url>
   <url><loc>https://testerexchange.com/guide/get-12-testers-claude-code/</loc><lastmod>2026-11-14</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://testerexchange.com/guide/get-12-testers-claude-code/"/>
     <xhtml:link rel="alternate" hreflang="am" href="https://testerexchange.com/am/get-12-testers-claude-code/"/>
@@ -44662,6 +44672,9 @@
     <xhtml:link rel="alternate" hreflang="zu" href="https://testerexchange.com/zu/get-12-testers-cursor/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://testerexchange.com/guide/get-12-testers-cursor/"/>
   </url>
+  <url><loc>https://testerexchange.com/guide/get-12-testers-emergent/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://testerexchange.com/guide/get-12-testers-expo/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://testerexchange.com/guide/get-12-testers-flutterflow/</loc><lastmod>2026-11-24</lastmod></url>
   <url><loc>https://testerexchange.com/guide/get-12-testers-gemini-cli/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://testerexchange.com/guide/get-12-testers-gemini-cli/"/>
     <xhtml:link rel="alternate" hreflang="am" href="https://testerexchange.com/am/get-12-testers-gemini-cli/"/>
@@ -47852,6 +47865,9 @@
     <xhtml:link rel="alternate" hreflang="zu" href="https://testerexchange.com/zu/get-12-testers-gemini-cli/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://testerexchange.com/guide/get-12-testers-gemini-cli/"/>
   </url>
+  <url><loc>https://testerexchange.com/guide/get-12-testers-google-ai-studio/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://testerexchange.com/guide/get-12-testers-lovable/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://testerexchange.com/guide/get-12-testers-replit/</loc><lastmod>2026-11-24</lastmod></url>
   <url><loc>https://testerexchange.com/guide/get-12-testers-vscode-copilot/</loc><lastmod>2026-11-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://testerexchange.com/guide/get-12-testers-vscode-copilot/"/>
     <xhtml:link rel="alternate" hreflang="am" href="https://testerexchange.com/am/get-12-testers-vscode-copilot/"/>
@@ -86572,6 +86588,7 @@
     <xhtml:link rel="alternate" hreflang="zu" href="https://testerexchange.com/zu/production-access-rejected/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://testerexchange.com/guide/production-access-rejected/"/>
   </url>
+  <url><loc>https://testerexchange.com/guide/referral-program/</loc><lastmod>2026-11-24</lastmod></url>
   <url><loc>https://testerexchange.com/guide/set-up-closed-testing-track/</loc><lastmod>2026-11-06</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://testerexchange.com/guide/set-up-closed-testing-track/"/>
     <xhtml:link rel="alternate" hreflang="am" href="https://testerexchange.com/am/set-up-closed-testing-track/"/>
@@ -89942,6 +89959,8 @@
     <xhtml:link rel="alternate" hreflang="tr" href="https://testerexchange.com/tr/test-for-test-closed-testing/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://testerexchange.com/guide/test-for-test-closed-testing/"/>
   </url>
+  <url><loc>https://testerexchange.com/guide/twa-app-closed-testing-webview-fix/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://testerexchange.com/guide/website-to-android-app-12-testers/</loc><lastmod>2026-11-24</lastmod></url>
   <url><loc>https://testerexchange.com/guide/when-can-i-apply-for-production-access/</loc><lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://testerexchange.com/guide/when-can-i-apply-for-production-access/"/>
     <xhtml:link rel="alternate" hreflang="am" href="https://testerexchange.com/am/when-can-i-apply-for-production-access/"/>
@@ -96322,6 +96341,8 @@
     <xhtml:link rel="alternate" hreflang="zu" href="https://testerexchange.com/zu/tools/production-answers/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://testerexchange.com/tools/production-answers/"/>
   </url>
+  <url><loc>https://testerexchange.com/tools/production-date-calculator/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://testerexchange.com/tools/play-listing-grader/</loc><lastmod>2026-11-24</lastmod></url>
   <url><loc>https://testerexchange.com/t/vn.tuan.galaxydriller/</loc><lastmod>2026-11-24</lastmod></url>
   <url><loc>https://testerexchange.com/t/com.sportspulse.app/</loc><lastmod>2026-11-24</lastmod></url>
   <url><loc>https://testerexchange.com/t/com.vortygon.captainlulu/</loc><lastmod>2026-11-24</lastmod></url>
